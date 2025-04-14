@@ -49,7 +49,7 @@
             letter-spacing: 2px;
             position: relative;
         }
-
+        
         .logo a{
             text-decoration: none;
             color: white;
@@ -61,52 +61,52 @@
             top: 18px;
             right: -20px;
         }
-
+        
         header nav {
             flex-grow: 1;
             display: flex;
             justify-content: center;
         }
-
+        
         header ul {
             display: flex;
             align-items: center;
             padding: 0;
             margin: 0;
         }
-
+        
         header ul li {
             display: inline-block;
             padding: 0 25px;
             list-style-type: none;
         }
-
+        
         header ul li a {
             color: white;
             font-size: 18px;
             text-decoration: none;
         }
-
+        
         header ul li a:hover {
             color: rgb(10, 161, 10);
             text-decoration: underline;
             transition: 0.5s;
         }
-
+        
         .icon-nav {
             display: flex;
             align-items: center;
         }
-
+        
         .icon-nav li {
             padding: 0 15px;
         }
-
+        
         .icon-nav i {
             color: white;
             font-size: 20px;
         }
-
+        
         .heading {
             padding-top: 100px;
             text-align: center;
@@ -121,114 +121,19 @@
             font-weight: bold;
             font-family: 'Noto Serif', serif;
         }
-
+        
         .panel {
             width: 100%;
             padding: 0 5%;
             margin-top: 50px;
         }
-
+        
         .panel img {
             width: 100%;
             border-radius: 30px;
             display: block;
         }
-
-        .mission {
-            max-width: 800px;
-            padding: 100px 20px 50px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 28px;
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-            line-height: 1.5;
-        }
-
-        .nd {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 50px 0;
-        }
-
-        .col-5 {
-            flex: 0 0 48%;
-            max-width: 48%;
-        }
-
-        .row img {
-            width: 100%;
-            border-radius: 30px;
-            display: block;
-        }
-
-        .row h2 {
-            font-size: 36px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-            margin-bottom: 20px;
-        }
-
-        .noi-dung {
-            font-size: 18px;
-            line-height: 1.6;
-            word-spacing: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .content3 {
-            margin: 100px 0 50px;
-            background-image: url("../img/hinhdai.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 510px;
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0 5%;
-        }
-
-        .box {
-            background-color: rgb(35, 60, 55);
-            border-radius: 20px;
-            width: 50%;
-            max-width: 600px;
-            padding: 60px 30px;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-            color: white;
-        }
-
-        button {
-            margin-top: 30px;
-            font-size: 20px;
-            padding: 10px 30px;
-            background-color: rgb(35, 60, 55);
-            color: white;
-            border: white 1px solid;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            background-color: rgb(200, 245, 200);
-            color: rgb(1, 112, 1);
-            border: rgb(1, 112, 1) 1px solid;
-        }
-
+        
         /* Media Queries */
         @media (max-width: 1200px) {
             .row h2 {
@@ -328,6 +233,101 @@
                 padding: 0 3%;
             }
         }
+        .mission {
+            max-width: 800px;
+            padding: 100px 20px 50px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 28px;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            line-height: 1.5;
+        }
+        
+        .nd {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 50px 0;
+        }
+
+        .col-5 {
+            flex: 0 0 48%;
+            max-width: 48%;
+        }
+
+        .row img {
+            width: 100%;
+            border-radius: 30px;
+            display: block;
+        }
+
+        .row h2 {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Noto Serif', serif;
+            margin-bottom: 20px;
+        }
+
+        .noi-dung {
+            font-size: 18px;
+            line-height: 1.6;
+            word-spacing: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content3 {
+            margin: 100px 0 50px;
+            background-image: url("../img/hinhdai.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 510px;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .box {
+            background-color: rgb(35, 60, 55);
+            border-radius: 20px;
+            width: 50%;
+            max-width: 600px;
+            padding: 60px 30px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Noto Serif', serif;
+            color: white;
+        }
+
+        button {
+            margin-top: 30px;
+            font-size: 20px;
+            padding: 10px 30px;
+            background-color: rgb(35, 60, 55);
+            color: white;
+            border: white 1px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(200, 245, 200);
+            color: rgb(1, 112, 1);
+            border: rgb(1, 112, 1) 1px solid;
+        }
+
     </style>
 </head>
 <body>
@@ -341,7 +341,7 @@
                     <li><a href="../html/about.html">ABOUT</a></li>
                     <li><a href="#">PRODUCT</a></li>
                     <li><a href="#">CATALOGUE</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="../html/contact.html">CONTACT US</a></li>
                 </ul>
             </nav>
             <ul class="icon-nav">
