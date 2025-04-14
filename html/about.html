@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .container-fluid {
+            background-color: #F4F4F2;
+            width: 100%;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            height: 80px;
+            width: 100%;
+            position: relative;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @font-face {
+            font-family: 'Arareelike';
+            src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('adarsh-sans-italic');
+        }
+
+        .logo {
+            font-family: 'Arareelike', sans-serif;
+            font-size: 40px;
+            color: white;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo sup {
+            font-size: 16px;
+            position: absolute;
+            top: 18px;
+            right: -20px;
+        }
+
+        header nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        header ul {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header ul li {
+            display: inline-block;
+            padding: 0 25px;
+            list-style-type: none;
+        }
+
+        header ul li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            color: rgb(10, 161, 10);
+            text-decoration: underline;
+            transition: 0.5s;
+        }
+
+        .icon-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-nav li {
+            padding: 0 15px;
+        }
+
+        .icon-nav i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .heading {
+            padding-top: 100px;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+        }
+        
+        .slogan {
+            padding-top: 25px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Noto Serif', serif;
+        }
+
+        .panel {
+            width: 100%;
+            padding: 0 5%;
+            margin-top: 50px;
+        }
+
+        .panel img {
+            width: 100%;
+            border-radius: 30px;
+            display: block;
+        }
+
+        .mission {
+            max-width: 800px;
+            padding: 100px 20px 50px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 28px;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            line-height: 1.5;
+        }
+
+        .nd {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 50px 0;
+        }
+
+        .col-5 {
+            flex: 0 0 48%;
+            max-width: 48%;
+        }
+
+        .row img {
+            width: 100%;
+            border-radius: 30px;
+            display: block;
+        }
+
+        .row h2 {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Noto Serif', serif;
+            margin-bottom: 20px;
+        }
+
+        .noi-dung {
+            font-size: 18px;
+            line-height: 1.6;
+            word-spacing: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content3 {
+            margin: 100px 0 50px;
+            background-image: url("../img/hinhdai.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 510px;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .box {
+            background-color: rgb(35, 60, 55);
+            border-radius: 20px;
+            width: 50%;
+            max-width: 600px;
+            padding: 60px 30px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Noto Serif', serif;
+            color: white;
+        }
+
+        button {
+            margin-top: 30px;
+            font-size: 20px;
+            padding: 10px 30px;
+            background-color: rgb(35, 60, 55);
+            color: white;
+            border: white 1px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(200, 245, 200);
+            color: rgb(1, 112, 1);
+            border: rgb(1, 112, 1) 1px solid;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .row h2 {
+                font-size: 30px;
+            }
+            
+            .noi-dung {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .box {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header {
+                height: auto;
+                padding: 20px 5%;
+                flex-direction: column;
+            }
+            
+            header ul li {
+                padding: 10px 15px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+            
+            .col-5 {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .mission {
+                font-size: 24px;
+            }
+            
+            .box {
+                width: 70%;
+                font-size: 24px;
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slogan {
+                font-size: 36px;
+            }
+            
+            header ul {
+                flex-direction: column;
+            }
+            
+            .content3 {
+                height: 400px;
+            }
+            
+            .box {
+                width: 90%;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .heading {
+                font-size: 24px;
+            }
+            
+            .slogan {
+                font-size: 28px;
+            }
+            
+            .mission {
+                font-size: 20px;
+                padding-top: 50px;
+            }
+            
+            .row h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Fix for 90% zoom */
+        @media (min-width: 1200px) {
+            .logo {
+                margin-right: 30px;
+            }
+            
+            header ul li {
+                padding: 0 20px;
+            }
+            
+            header {
+                padding: 0 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="logo">
+                TnT accessories<sup>®</sup>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="#">CATALOGUE</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </nav>
+            <ul class="icon-nav">
+                <li><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                <li><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
+            </ul>
+        </header>
+
+        <div class="heading">Our Story</div>
+        <div class="slogan">Phụ kiện công nghệ chất lượng <br> Giao tận tay bạn</div>
+        
+        <div class="panel">
+            <img src="../img/panel.png" alt="panel">
+        </div>
+        
+        <div class="mission">
+            Sứ mệnh của chúng tôi là mang đến cho bạn
+            những sản phẩm phụ kiện điện thoại chất lượng,
+            mẫu mã đa dạng với mức giá hợp lý. Tất cả đơn
+            hàng từ TnT Accessories được xử lý nhanh chóng
+            và giao trực tiếp đến bạn – không qua trung gian
+            hay nhà phân phối. Sản phẩm luôn đảm bảo
+            mới, an toàn, sẵn sàng đồng hành cùng thiết bị
+            của bạn trong mọi tình huống. 
+        </div>
+        
+        <div class="nd">
+            <div class="row">
+                <div class="col-5">
+                    <img src="../img/sacPanel.jpg" alt="Phụ kiện sạc điện thoại">
+                </div>
+                <div class="col-5">
+                    <h2>Tận tâm phục vụ</h2>
+                    <div class="noi-dung">Tại TnT Accessories, chúng tôi tin rằng mỗi chiếc phụ kiện đều 
+                        là một phần nâng tầm trải nghiệm sử dụng điện thoại. Chúng tôi 
+                        không chỉ cung cấp sản phẩm – chúng tôi mang đến sự tiện lợi, 
+                        bảo vệ và phong cách cá nhân.</div>
+                    <br>
+                    <div class="noi-dung">Chất lượng – Uy tín – Phục vụ tận tâm là kim chỉ nam cho mọi hoạt động 
+                        mà chúng tôi hướng đến.</div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-5">
+                    <h2>Người sáng lập</h2>
+                    <div class="noi-dung">TnT Accessories được thành lập bởi những người yêu công nghệ 
+                        và hiểu rõ nhu cầu thực tế của người dùng hiện đại. Với mong 
+                        muốn tạo nên một nơi mà bạn có thể dễ dàng tìm thấy mọi phụ 
+                        kiện cần thiết, chúng tôi không ngừng cập nhật xu hướng mới, 
+                        cải tiến dịch vụ và lắng nghe phản hồi của khách hàng để hoàn 
+                        thiện từng ngày.</div>
+                </div>
+                <div class="col-5">
+                    <img src="../img/opLung.jpg" alt="Ốp lưng điện thoại">
+                </div>
+            </div>
+        </div>
+        
+        <div class="mission">
+            Sứ mệnh của chúng tôi là mang đến cho bạn
+            những sản phẩm phụ kiện điện thoại chất lượng,
+            mẫu mã đa dạng với mức giá hợp lý. Tất cả đơn
+            hàng từ TnT Accessories được xử lý nhanh chóng
+            và giao trực tiếp đến bạn – không qua trung gian
+            hay nhà phân phối. Sản phẩm luôn đảm bảo
+            mới, an toàn, sẵn sàng đồng hành cùng thiết bị
+            của bạn trong mọi tình huống. 
+        </div>
+        
+        <div class="content3">
+            <div class="box">
+                <div>Phụ kiện công nghệ chất lượng <br> Giao tận tay bạn</div>
+                <button>Shop now</button>
+            </div>
+        </div>
+        
+        <footer></footer>
+    </div>
+</body>
+</html>
