@@ -9,15 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
         *{
-            padding: 0;
+            /* padding: 0; */
             box-sizing: border-box;
             margin: 0 auto  ;
         }
         .contain{
             align-items: center;
             background-color: white;
-            height: 1000px;
+            /* height: 1000px; */
             position: relative;
         }
 
@@ -40,6 +44,10 @@
             margin-left: 50px;
             top: 8px;
             left: 10px;
+        }
+        .logo a {
+            text-decoration: none;
+            color: white;
         }
         .logo div sup{
             display: flex;
@@ -70,9 +78,16 @@
             font-size: 18px;
         }
         .container-fluid ul li a:hover{
-            color: rgb(10, 161, 10);
             transition: 0.5s;
             text-decoration: underline;
+            color: rgb(10, 161, 10);
+        }
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            transition: all 0.2s ease;
+            color: white;
+            left: 0;
         }
         #person{
             color: white;
@@ -119,6 +134,14 @@
             position: absolute;
             top: 180px;
             left: -250px;
+            color: white;
+            
+        }
+        section .top_right p{
+            font-size: 15px;
+            position: absolute;
+            top: 180px;
+            right: -40px;
             color: white;
             
         }
@@ -203,7 +226,7 @@
             transform: translate(-50%, -50%);
          }
          .top_right:hover .text2 {
-            left: 69%; /* đến giữa ảnh */
+            left: 70%; /* đến giữa ảnh */
             transform: translate(-50%, -50%);
          }
         section .top_right{
@@ -219,7 +242,7 @@
             font-size: 30px;
             position: absolute;
             top: 100px;
-            right: 610px;
+            right: 620px;
             color: white;
         }
         section .top_right img{
@@ -327,6 +350,7 @@
         }
         .ngang img{
             margin-top: 50px;
+            position: relative;
         }
         #newitem{
             display: flex;
@@ -366,6 +390,58 @@
         #ngang2 img{
             margin-top: 50px;
         }
+        .content_1{
+            font-size: 30px;
+            position: absolute;
+            color: white;
+            top: 35%;
+            left: 44%;
+        }
+        .content_2{
+            font-size: 30px;
+            position: absolute;
+            color: white;
+            top: 45%;
+            left: 39%;
+            font-weight: bold;
+        }
+        .content_3{
+            font-size: 15px;
+            position: absolute;
+            color: white;
+            top: 57%;
+            left: 36%;
+        }
+        .content_4{
+            font-size: 15px;
+            position: absolute;
+            color: white;
+            top: 61%;
+            left: 45.5%;
+        }
+        .button_5{
+            position: absolute;
+            top: 80%;
+            left: 46%;
+            width: 155px;
+            height: 50px;
+            background-color: transparent;
+            border-radius: 25px;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button_5:hover{
+            background-color: black;
+        }
+        .image-hover-zoom {
+            transition: transform 0.3s ease;
+            cursor: pointer; /* con trỏ thay đổi khi hover */
+        }
+        .image-hover-zoom:hover {
+            transform: scale(1.1); /* phóng to 110% */
+        }
         .logofooter{
             font-family: 'Arareelike', ;
             font-size: 30px;
@@ -404,24 +480,32 @@
         }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
-    
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">  
     <div class="contain" style="position: relative;">
         <nav class="navbar navbar-expand-sm bg-black navbar-dark fixed-top">
             <div class="container-fluid">
                     <div class="logo">
-                        <div>TnT accessories<sup>®</sup></div>
+                        <div><a href="../html/index.html" >TnT accessories<sup>®</sup></a></div>
                     </div>
                     <ul>
                         <li><a href="../html/about.html">ABOUT</a></li>
-                        <li><a href="../html/product.html">PRODUCT</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="../html/product.html" class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCT</a>
+                            <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                                <li><a class="dropdown-item" href="#"  style="color: black; ">NEW</a></li>
+                                <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
+                                <li><a class="dropdown-item" href="#" style="color: black; ">APPLE</a></li>
+                                <li><a class="dropdown-item" href="#" style="color: black; ">SAMSUNG</a></li>
+                              </ul>
+                        </li>
                         <li><a href="#">CATALOGUE</a></li>
                         <li><a href="../html/contact.html">CONTACT US</a></li>
                         <li class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
                     </ul>
             </div>
-          </nav>
+        </nav>
+    </div>
         <nav>
             <!-- Carousel -->
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -436,13 +520,13 @@
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../IMG/topbar1.png" alt="Los Angeles" class="d-block" style="width:100%">
+                    <img src="../IMG/topbar1.png" alt="Los Angeles" class="d-block" style="width:100%;">
                 </div>
                 <div class="carousel-item">
                     <img src="../IMG/topbar2.png" alt="Chicago" class="d-block" style="width:100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="../IMG/topbar3.png" alt="New York" class="d-block" style="width:100%">
+                    <img src="../img/topbar1.png" alt="New York" class="d-block" style="width:100%;">
                 </div>
                 </div>
                 
@@ -498,13 +582,20 @@
         </aside>
         <nav class="ngang">
             <img src="../IMG/ngang.jpg" width="100%" height="500px">
+            <p class="content_1">TnT accessories</p>
+                <p class="content_2">"a marvellous experience"</p>
+                <p class="content_3">
+                    TnT accessories is a manufacturer and distributor of mobile accessories
+                </p>
+                <p class="content_4">headquartered Vietnam.</p>
+                <button class="button_5">READ MORE</button>
         </nav>
         <div class="row" id="newitem">
             <p><b>NEW ITEM</b></p>
         </div>
         <div class="row" id="bottom">
             <div class="col-6" id="trai">
-                <img src="../IMG/trai.jpg" alt="" width="100%">
+                <img src="../IMG/trai.jpg" alt="ảnh" class="image-hover-zoom" width="95%" style="margin-left: 60px;">
             </div>
             <div class="col-6 ">
                     <!-- Carousel -->
