@@ -11,322 +11,221 @@
     <script src="../js/bootstrap.min.js"></script>
     <style>
         * {
-            padding: 0;
-            box-sizing: border-box;
-            margin: 0;
-        }
-        
-        body {
-            overflow-x: hidden;
-        }
-        
-        .container-fluid {
-            background-color: #F4F4F2;
-            width: 100%;
-            padding: 0;
-        }
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
 
-        header {
-            background-color: black;
-            height: 80px;
-            width: 100%;
-            position: relative;
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+body {
+    overflow-x: hidden;
+}
 
-        @font-face {
-            font-family: 'Arareelike';
-            src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('adarsh-sans-italic');
-        }
+.container-fluid {
+    background-color: #F4F4F2;
+    width: 100%;
+    padding: 0;
+}
 
-        .logo {
-            font-family: 'Arareelike', sans-serif;
-            font-size: 40px;
-            color: white;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        
-        .logo a{
-            text-decoration: none;
-            color: white;
-        }
+header {
+    background-color: black;
+    min-height: 80px;
+    width: 100%;
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        .logo sup {
-            font-size: 16px;
-            position: absolute;
-            top: 18px;
-            right: -20px;
-        }
-        
-        header nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-        
-        header ul {
-            display: flex;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
-        
-        header ul li {
-            display: inline-block;
-            padding: 0 25px;
-            list-style-type: none;
-        }
-        
-        header ul li a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        
-        header ul li a:hover {
-            color: rgb(10, 161, 10);
-            text-decoration: underline;
-            transition: 0.5s;
-        }
-        
-        .icon-nav {
-            display: flex;
-            align-items: center;
-        }
-        
-        .icon-nav li {
-            padding: 0 15px;
-        }
-        
-        .icon-nav i {
-            color: white;
-            font-size: 20px;
-        }
-        
-        .heading {
-            padding-top: 100px;
-            text-align: center;
-            font-size: 30px;
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-        }
-        
-        .slogan {
-            padding-top: 25px;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-        }
-        
-        .panel {
-            width: 100%;
-            padding: 0 5%;
-            margin-top: 50px;
-        }
-        
-        .panel img {
-            width: 100%;
-            border-radius: 30px;
-            display: block;
-        }
-        
-        /* Media Queries */
-        @media (max-width: 1200px) {
-            .row h2 {
-                font-size: 30px;
-            }
-            
-            .noi-dung {
-                font-size: 16px;
-                line-height: 1.5;
-            }
-            
-            .box {
-                font-size: 28px;
-            }
-        }
+@font-face {
+    font-family: 'Arareelike';
+    src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('opentype');
+}
 
-        @media (max-width: 992px) {
-            header {
-                height: auto;
-                padding: 20px 5%;
-                flex-direction: column;
-            }
-            
-            header ul li {
-                padding: 10px 15px;
-            }
+.logo {
+    font-family: 'Arareelike', sans-serif;
+    font-size: 2em;
+    color: white;
+    letter-spacing: 2px;
+    position: relative;
+}
 
-            .row {
-                flex-direction: column;
-            }
-            
-            .col-5 {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-            
-            .mission {
-                font-size: 24px;
-            }
-            
-            .box {
-                width: 70%;
-                font-size: 24px;
-                padding: 40px 20px;
-            }
-        }
+.logo a {
+    text-decoration: none;
+    color: white;
+}
 
-        @media (max-width: 768px) {
-            .slogan {
-                font-size: 36px;
-            }
-            
-            header ul {
-                flex-direction: column;
-            }
-            
-            .content3 {
-                height: 400px;
-            }
-            
-            .box {
-                width: 90%;
-                max-width: none;
-            }
-        }
+.logo sup {
+    font-size: 0.5em;
+    position: absolute;
+    top: 0.6em;
+    right: -1.2em;
+}
 
-        @media (max-width: 576px) {
-            .heading {
-                font-size: 24px;
-            }
-            
-            .slogan {
-                font-size: 28px;
-            }
-            
-            .mission {
-                font-size: 20px;
-                padding-top: 50px;
-            }
-            
-            .row h2 {
-                font-size: 24px;
-            }
-        }
+header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        /* Fix for 90% zoom */
-        @media (min-width: 1200px) {
-            .logo {
-                margin-right: 30px;
-            }
-            
-            header ul li {
-                padding: 0 20px;
-            }
-            
-            header {
-                padding: 0 3%;
-            }
-        }
-        .mission {
-            max-width: 800px;
-            padding: 100px 20px 50px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 28px;
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-            line-height: 1.5;
-        }
-        
-        .nd {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
 
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 50px 0;
-        }
+header ul li {
+    list-style-type: none;
+}
 
-        .col-5 {
-            flex: 0 0 48%;
-            max-width: 48%;
-        }
+header ul li a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+}
 
-        .row img {
-            width: 100%;
-            border-radius: 30px;
-            display: block;
-        }
+header ul li a:hover {
+    color: rgb(10, 161, 10);
+    text-decoration: underline;
+    transition: 0.5s;
+}
 
-        .row h2 {
-            font-size: 36px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-            margin-bottom: 20px;
-        }
+/* ========== TEXT & SLOGAN ========== */
+.heading {
+    padding-top: 100px;
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
 
-        .noi-dung {
-            font-size: 18px;
-            line-height: 1.6;
-            word-spacing: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+.slogan {
+    padding-top: 25px;
+    text-align: center;
+    font-size: clamp(28px, 6vw, 50px);
+    font-weight: bold;
+    font-family: 'Noto Serif', serif;
+}
 
-        .content3 {
-            margin: 100px 0 50px;
-            background-image: url("../img/hinhdai.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 510px;
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 0 5%;
-        }
+/* ========== PANEL ========== */
+.panel {
+    width: 100%;
+    padding: 0 5%;
+    margin-top: 50px;
+}
 
-        .box {
-            background-color: rgb(35, 60, 55);
-            border-radius: 20px;
-            width: 50%;
-            max-width: 600px;
-            padding: 60px 30px;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-            color: white;
-        }
+.panel img {
+    width: 100%;
+    border-radius: 30px;
+    display: block;
+}
 
-        button {
-            margin-top: 30px;
-            font-size: 20px;
-            padding: 10px 30px;
-            background-color: rgb(35, 60, 55);
-            color: white;
-            border: white 1px solid;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+/* ========== MISSION ========== */
+.mission {
+    max-width: 800px;
+    padding: 100px 20px 50px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(20px, 3vw, 28px);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    line-height: 1.5;
+}
 
-        button:hover {
-            background-color: rgb(200, 245, 200);
-            color: rgb(1, 112, 1);
-            border: rgb(1, 112, 1) 1px solid;
-        }
+/* ========== CONTENT WRAPPER ========== */
+.nd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== ROW FLEX LAYOUT ========== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0;
+    gap: 30px;
+}
+
+.col-5 {
+    flex: 1 1 48%;
+    max-width: 48%;
+}
+
+.row img {
+    width: 100%;
+    border-radius: 30px;
+    display: block;
+}
+
+.row h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: bold;
+    font-family: 'Noto Serif', serif;
+    margin-bottom: 20px;
+}
+
+.noi-dung {
+    font-size: clamp(16px, 2.2vw, 18px);
+    line-height: 1.6;
+    word-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== BACKGROUND SECTION ========== */
+.content3 {
+    margin: 100px 0 50px;
+    background-image: url("../img/hinhdai.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 510px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 5%;
+}
+
+/* ========== TEXT BOX ========== */
+.box {
+    background-color: rgb(35, 60, 55);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    padding: 60px 30px;
+    text-align: center;
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    font-family: 'Noto Serif', serif;
+    color: white;
+}
+
+/* ========== BUTTON ========== */
+button {
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: rgb(35, 60, 55);
+    color: white;
+    border: white 1px solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(200, 245, 200);
+    color: rgb(1, 112, 1);
+    border: rgb(1, 112, 1) 1px solid;
+}
 
     </style>
 </head>
@@ -339,7 +238,7 @@
             <nav>
                 <ul>
                     <li><a href="../html/about.html">ABOUT</a></li>
-                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="../html/product.html">PRODUCT</a></li>
                     <li><a href="#">CATALOGUE</a></li>
                     <li><a href="../html/contact.html">CONTACT US</a></li>
                 </ul>

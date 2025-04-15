@@ -11,215 +11,199 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <style>
-         * {
-            padding: 0;
-            box-sizing: border-box;
-            margin: 0;
-        }
-        
-        body {
-            overflow-x: hidden;
-        }
-        
-        .container-fluid {
-            background-color: #F4F4F2;
-            width: 100%;
-            padding: 0;
-        }
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
 
-        header {
-            background-color: black;
-            height: 80px;
-            width: 100%;
-            position: relative;
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    body {
+        overflow-x: hidden;
+    }
 
-        @font-face {
-            font-family: 'Arareelike';
-            src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('adarsh-sans-italic');
-        }
+    .container-fluid {
+        background-color: #F4F4F2;
+        width: 100%;
+        padding: 0;
+    }
 
-        .logo {
-            font-family: 'Arareelike', sans-serif;
-            font-size: 40px;
-            color: white;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        
-        .logo a{
-            text-decoration: none;
-            color: white;
-        }
+    header {
+        background-color: black;
+        min-height: 80px;
+        width: 100%;
+        padding: 10px 3%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-        .logo sup {
-            font-size: 16px;
-            position: absolute;
-            top: 18px;
-            right: -20px;
-        }
-        
-        header nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-        
-        header ul {
-            display: flex;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
-        
-        header ul li {
-            display: inline-block;
-            padding: 0 25px;
-            list-style-type: none;
-        }
-        
-        header ul li a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        
-        header ul li a:hover {
-            color: rgb(10, 161, 10);
-            text-decoration: underline;
-            transition: 0.5s;
-        }
-        
-        .icon-nav {
-            display: flex;
-            align-items: center;
-        }
-        
-        .icon-nav li {
-            padding: 0 15px;
-        }
-        
-        .icon-nav i {
-            color: white;
-            font-size: 20px;
-        }
-        
-        .heading {
-            padding-top: 100px;
-            text-align: center;
-            font-size: 30px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .address {
-            padding-top: 25px;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            font-family: 'Noto Serif', serif;
-        }
-        
+    @font-face {
+        font-family: 'Arareelike';
+        src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('opentype');
+    }
 
-        @media (max-width: 992px) {
-            header {
-                height: auto;
-                padding: 20px 5%;
-                flex-direction: column;
-            }
-            
-            header ul li {
-                padding: 10px 15px;
-            }
+    .logo {
+        font-family: 'Arareelike', sans-serif;
+        font-size: 2em;
+        color: white;
+        letter-spacing: 2px;
+        position: relative;
+    }
 
-        }
+    .logo a {
+        text-decoration: none;
+        color: white;
+    }
 
-        @media (max-width: 768px) {
-            
-            header ul {
-                flex-direction: column;
-            }
+    .logo sup {
+        font-size: 0.5em;
+        position: absolute;
+        top: 0.6em;
+        right: -1.2em;
+    }
 
-        }
+    header nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-        @media (max-width: 576px) {
-            .heading {
-                font-size: 24px;
-            }
-            
-            .slogan {
-                font-size: 28px;
-            }
-            
-        }
+    header ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        gap: 15px;
+    }
 
-        /* Fix for 90% zoom */
-        @media (min-width: 1200px) {
-            .logo {
-                margin-right: 30px;
-            }
-            
-            header ul li {
-                padding: 0 20px;
-            }
-            
-            header {
-                padding: 0 3%;
-            }
-        }
+    header ul li {
+        list-style-type: none;
+    }
 
-        #view{
-            padding: 8px 20px;
-            margin-top: 18px;
-            /* margin-left: 47%; */
-        }
+    header ul li a {
+        color: white;
+        font-size: 1em;
+        text-decoration: none;
+    }
 
-        #view a{
-            text-decoration: none;
-            color: black;
-        }
+    header ul li a:hover {
+        color: rgb(10, 161, 10);
+        text-decoration: underline;
+        transition: 0.5s;
+    }
 
-        #view:hover{
-            background-color: rgb(35, 60, 55);
-        }
+    .icon-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-        #view:hover a{
-            color: white;
-        }
+    .icon-nav i {
+        color: white;
+        font-size: 1.2em;
+    }
 
-        .center{
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-        }
+.heading {
+    padding-top: 60px;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
 
-        .content{
-            padding-top: 30px;
-            /* width: 500px; */
-            text-align: center;
-            /* margin-left: 36.5%; */
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 32px;
-            font-weight: bold;
-        }
-        .form{
-            /* margin-left: 35%; */
-            padding-bottom: 100px;
-        }
-        .form label{
-            padding-top: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-            padding-right: 530px;
-        }
+.address {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Noto Serif', serif;
+}
 
-        .submit:hover{
-            background-color: rgb(35, 60, 55);
-            color: white;
-        }
+#view {
+    padding: 8px 20px;
+    margin: 20px auto;
+    display: block;
+    max-width: 200px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#view a {
+    text-decoration: none;
+    color: black;
+}
+
+#view:hover {
+    background-color: rgb(35, 60, 55);
+}
+
+#view:hover a {
+    color: white;
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    max-width: 90%;
+}
+
+.form {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.form label {
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.form textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.submit {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(35, 60, 55);
+    color: white;
+}
         
     </style>
 </head>
@@ -232,7 +216,7 @@
             <nav>
                 <ul>
                     <li><a href="../html/about.html">ABOUT</a></li>
-                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="../html/product.html">PRODUCT</a></li>
                     <li><a href="#">CATALOGUE</a></li>
                     <li><a href="../html/contact.html">CONTACT US</a></li>
                 </ul>
