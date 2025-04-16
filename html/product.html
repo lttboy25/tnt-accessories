@@ -205,10 +205,42 @@
     }
 
     /*---------------------------Footer------------------------*/
-    footer{
-        background-color: black;
-        height: 100px;
-    }
+    .logofooter{
+            font-family: 'Arareelike', ;
+            font-size: 30px;
+            color: black;
+            letter-spacing: 2px;
+            margin-left: 20px;
+            margin-top: 60px;
+        }
+        #contactfooter, #followfooter, #privatefooter{
+            margin-top: 60px;
+            font-size: 20px;
+        }
+        #followfooter ul li a{
+            font-size: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #followfooter ul li{
+            list-style-type: none;
+        }
+        #followfooter ul{
+            position: absolute;
+            top: 150px;
+        }
+        #privatefooter ul li a{
+            font-size: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #privatefooter ul li{
+            list-style-type: none;
+        }
+        #privatefooter ul{
+            position: absolute;
+            top: 150px;
+        }
 
     </style>
 </head>
@@ -435,7 +467,40 @@
             </button>
         </div>
         
-        <footer></footer>
+        <div class="row p-5" style="position: relative; margin-bottom: 100px; background-color: white; ">
+            <div class="col-3" id="logofooter">
+                <div class="logofooter">
+                    <div>TnT accessories<sup>®</sup></div>
+                </div>
+                   
+            </div>
+            <div class="col-2" id="contactfooter">
+                <p><b>CONTACT</b>  <br>
+                    tntaccessories@kdlad.kr
+                </p>
+            </div>
+            <div class="col-3" id="contactfooter">
+                <p><b>COMPANY INFO</b> <br>
+                   <span style="font-size: 15px;"> 12 Nguyen Van Bao, Phuong 1, Quan Go vap <br>
+                    Ho Chi Minh City, Viet Nam</span>
+                </p>
+            </div>
+            <div class="col-2" id="followfooter">
+                <p style="margin-left: 30px;"><b>FOLLOW US</b></p>
+                <ul>
+                    <li><a href="#">FACEBOOK</a></li>
+                    <li><a href="#">INSTAGRAM</a></li>
+                    <li><a href="#">TWITTER</a></li>
+                </ul>
+            </div>
+            <div class="col-2" id="privatefooter">
+                <p style="margin-left: 30px;"><b>PRIVATE</b></p>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                </ul>
+            </div>
+        </div>
         
     <script>
         let toggleBtn = document.getElementById("toggleBtn");
