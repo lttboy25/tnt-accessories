@@ -21,20 +21,6 @@
         overflow-x: hidden;
     }
 
-    .contain{
-            align-items: center;
-            background-color: white;
-            /* height: 1000px; */
-            position: relative;
-        }
-
-    .container-fluid{
-            background-color: black;
-            height: 80px;
-            position: absolute;
-            top: 1px;
-        }
-        /* -------------------------------- */
         /* Header Styles */
         header {
             position: fixed;
@@ -131,7 +117,7 @@
             right: -150px;
             font-size: 20px;
         }
-/* ------------------Slogan-------------------- */
+
 .heading {
     padding-top: 100px;
     text-align: center;
@@ -228,6 +214,43 @@
     background-color: rgb(35, 60, 55);
     color: white;
 }
+/*---------------------------Footer------------------------*/
+.logofooter{
+            font-family: 'Arareelike', ;
+            font-size: 30px;
+            color: black;
+            letter-spacing: 2px;
+            margin-left: 20px;
+            margin-top: 60px;
+        }
+        #contactfooter, #followfooter, #privatefooter{
+            margin-top: 60px;
+            font-size: 20px;
+        }
+        #followfooter ul li a{
+            font-size: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #followfooter ul li{
+            list-style-type: none;
+        }
+        #followfooter ul{
+            position: absolute;
+            top: 150px;
+        }
+        #privatefooter ul li a{
+            font-size: 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #privatefooter ul li{
+            list-style-type: none;
+        }
+        #privatefooter ul{
+            position: absolute;
+            top: 150px;
+        }
         
     </style>
 </head>
@@ -244,7 +267,7 @@
                     <ul class="dropdown-menu" aria-labelledby="menuDropdown">
                         <li><a class="dropdown-item" href="#" style="color: black;">NEW</a></li>
                         <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: black;">APPLE</a></li>
+                        <li><a class="dropdown-item" href="../html/apple.html" style="color: black;">APPLE</a></li>
                         <li><a class="dropdown-item" href="../html/product.html" style="color: black;">SAMSUNG</a></li>
                     </ul>
                 </li>
@@ -254,7 +277,7 @@
                 <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
-    </header>
+    </header>   
     <div class="container-fluid">
         <div class="center">
             <div class="heading">Contact</div>
@@ -281,7 +304,42 @@
             </div>
         </div>
 
-        <footer></footer>
+        <footer>
+            <div class="row p-5" style="position: relative; margin-bottom: 100px; background-color: white; ">
+                <div class="col-3" id="logofooter">
+                    <div class="logofooter">
+                        <div>TnT accessories<sup>®</sup></div>
+                    </div>
+                       
+                </div>
+                <div class="col-2" id="contactfooter">
+                    <p><b>CONTACT</b>  <br>
+                        tntaccessories@kdlad.kr
+                    </p>
+                </div>
+                <div class="col-3" id="contactfooter">
+                    <p><b>COMPANY INFO</b> <br>
+                       <span style="font-size: 15px;"> 12 Nguyen Van Bao, Phuong 1, Quan Go vap <br>
+                        Ho Chi Minh City, Viet Nam</span>
+                    </p>
+                </div>
+                <div class="col-2" id="followfooter">
+                    <p style="margin-left: 30px;"><b>FOLLOW US</b></p>
+                    <ul>
+                        <li><a href="#">FACEBOOK</a></li>
+                        <li><a href="#">INSTAGRAM</a></li>
+                        <li><a href="#">TWITTER</a></li>
+                    </ul>
+                </div>
+                <div class="col-2" id="privatefooter">
+                    <p style="margin-left: 30px;"><b>PRIVATE</b></p>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
