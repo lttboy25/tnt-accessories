@@ -188,6 +188,10 @@
         font-size: clamp(20px, 4vw, 30px);
         font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     }
+    .heading a{
+        text-decoration: none;
+        color: black;
+    }
     /*---------------------------Menu------------------------*/
     .menu{
         margin-top: 5px;
