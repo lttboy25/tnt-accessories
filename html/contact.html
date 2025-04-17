@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap" rel="stylesheet">
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+
     <style>
     * {
         padding: 0;
@@ -132,6 +134,7 @@
             display: none;
         }
 
+        /* -------------------------Đăng nhập----------------------- */
         #person {
             color: white;
             position: absolute;
@@ -139,6 +142,189 @@
             right: -200px;
             font-size: 20px;
         }
+
+        .sign-in{
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: none;
+        }
+        
+        .sign-in-form{
+            width: 500px;
+            height: 550px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sign-in-form h2 {
+            padding: 15;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .sign-in-form h2 span{
+            display: block;
+            position: absolute;
+            height: 15px;
+            left: 445px;
+            bottom: 75px;
+            cursor: pointer;
+            transform: translateY(50%);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-icon {
+            position: absolute;
+            left: 18px;
+            top: 15px;
+            color: #666;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #666;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+        }
+        .eye-icon {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .eye-icon:hover {
+            color: black;
+        }
+        .login-btn {
+            width: 100%;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            background-color: #e60000;
+            transform: translateY(-2px);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .or-divider{
+            padding-top: 20px;
+
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .fb-btn {
+            color: #4267B2;
+        }
+        
+        .fb-btn:hover {
+            background-color: #4267B2;
+            color: white;
+            border-color: #4267B2;
+        }
+        
+        .google-btn {
+            color: #DB4437;
+        }
+        
+        .google-btn:hover {
+            background-color: #DB4437;
+            color: white;
+            border-color: #DB4437;
+        }
+        
+        .apple-btn {
+            color: #000;
+        }
+        
+        .apple-btn:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 15px;
+        }
+        
+        .register-link a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .register-link a:hover {
+            color: #e60000;
+        }
+
+        /* --------------------------------------------------------- */
 
         #search {
             color: white;
@@ -288,7 +474,7 @@
     <header>
         <nav class="navbar navbar-expand-sm bg-black navbar-dark">
             <div class="logo">
-                <div><a href="#top">TnT accessories<sup>®</sup></a></div>
+                <div><a href="../index.html">TnT accessories<sup>®</sup></a></div>
             </div>
             <ul>
                 <li><a href="../html/about.html">ABOUT</a></li>
@@ -303,8 +489,45 @@
                 </li>
                 <li><a href="#">CATALOGUE</a></li>
                 <li><a href="../html/contact.html">CONTACT US</a></li>
-                <li class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
+                <li id="login" class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
+                <div class="sign-in">
+                    <div class="sign-in-form">
+                        <h2>Đăng nhập <span id="close"><i class="bi bi-x"></i></span></h2>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="phone" placeholder="Số điện thoại">
+                                <i class="bi bi-telephone form-icon"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                                <i class="bi bi-lock form-icon"></i>
+                                <i class="bi bi-eye-slash eye-icon" id="togglePassword"></i>
+                            </div>
+
+                            <button type="submit" class="login-btn">Đăng nhập
+                            </button>
+
+                            <div class="or-divider">Hoặc tiếp tục với</div>
+        
+                            <div class="social-login">
+                                <button class="social-btn fb-btn">
+                                    <i class="bi bi-facebook"></i>
+                                </button>
+                                <button class="social-btn google-btn">
+                                    <i class="bi bi-google"></i>
+                                </button>
+                                <button class="social-btn apple-btn">
+                                    <i class="bi bi-apple"></i>
+                                </button>
+                            </div>  
+
+                            <div class="register-link">
+                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
     </header>   

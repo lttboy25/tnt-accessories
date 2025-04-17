@@ -10,6 +10,8 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/product.css">
+    <script src="../js/index.js"></script>
+
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <header>
@@ -30,8 +32,45 @@
                 </li>
                 <li><a href="#">CATALOGUE</a></li>
                 <li><a href="../html/contact.html">CONTACT US</a></li>
-                <li class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
+                <li id="login" class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
+                <div class="sign-in">
+                    <div class="sign-in-form">
+                        <h2>Đăng nhập <span id="close"><i class="bi bi-x"></i></span></h2>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="phone" placeholder="Số điện thoại">
+                                <i class="bi bi-telephone form-icon"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                                <i class="bi bi-lock form-icon"></i>
+                                <i class="bi bi-eye-slash eye-icon" id="togglePassword"></i>
+                            </div>
+
+                            <button type="submit" class="login-btn">Đăng nhập
+                            </button>
+
+                            <div class="or-divider">Hoặc tiếp tục với</div>
+        
+                            <div class="social-login">
+                                <button class="social-btn fb-btn">
+                                    <i class="bi bi-facebook"></i>
+                                </button>
+                                <button class="social-btn google-btn">
+                                    <i class="bi bi-google"></i>
+                                </button>
+                                <button class="social-btn apple-btn">
+                                    <i class="bi bi-apple"></i>
+                                </button>
+                            </div>  
+
+                            <div class="register-link">
+                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
     </header>
