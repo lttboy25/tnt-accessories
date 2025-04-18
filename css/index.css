@@ -157,7 +157,7 @@
             color: white;
             position: absolute;
             top: -8px;
-            right: -200px;
+            right: 80px;
             font-size: 20px;
         }
 
@@ -368,12 +368,19 @@
         }
 
         /* --------------------------------------------------------- */
+        #cart {
+            color: white;
+            position: absolute;
+            top: -8px;
+            right: 30px;
+            font-size: 20px;
+        }
 
         #search {
             color: white;
             position: absolute;
             top: -8px;
-            right: -150px;
+            right: -20px;
             font-size: 20px;
         }
         /* -----------------------------center---------------------------- */
