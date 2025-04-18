@@ -23,7 +23,7 @@
             <ul>
                 <li><a href="../html/about.html">ABOUT</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
+                    <a href="../html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
                     <ul class="dropdown-menu" style="padding-right: 50px;" aria-labelledby="menuDropdown">
                         <li><a class="dropdown-item" href="#" style="color: black;">NEW</a></li>
                         <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
@@ -41,12 +41,14 @@
                             <div class="form-group">
                                 <input type="tel" class="form-control" id="phone" placeholder="Số điện thoại">
                                 <i class="bi bi-telephone form-icon"></i>
+                                <div class="error-message" id="phoneError"></div>
                             </div>
                             
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
                                 <i class="bi bi-lock form-icon"></i>
                                 <i class="bi bi-eye-slash eye-icon" id="togglePassword"></i>
+                                <div class="error-message" id="passwordError"></div>
                             </div>
 
                             <button type="submit" class="login-btn">Đăng nhập
@@ -67,7 +69,7 @@
                             </div>  
 
                             <div class="register-link">
-                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
+                                Chưa có tài khoản? <a href="../html/signup.html">Đăng ký ngay</a>
                             </div>
                         </form>
                     </div>

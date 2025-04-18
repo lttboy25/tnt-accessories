@@ -348,6 +348,31 @@
             color: #e60000;
         }
 
+        .error-message {
+            color: #e60000;
+            font-size: 12px;
+            margin-top: 5px;
+            margin-left: 45px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .error-message.show {
+            opacity: 1;
+            height: auto;
+            margin-top: 8px;
+        }
+        
+        .input-success {
+            border-color: #28a745 !important;
+        }
+        
+        .input-error {
+            border-color: #e60000 !important;
+        }
+
         /* --------------------------------------------------------- */
 
         #search {
