@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link href="../font/Quicksand-VariableFont_wght.ttf" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/index.js"></script>
@@ -426,6 +427,24 @@
             margin-left: 30px;
         }
 
+        /* ----------------Thông tin đổi trả --------------------*/
+        .exchange p span{
+            font-weight: bold;
+        }
+        /*----------------------Thông tin dành riêng cho bạn------------------*/
+        .swiper-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        float: left;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
@@ -541,7 +560,150 @@
               </div>
             </div>
         </div>
-    </div>
+        <div class="row mt-4">
+            <div class="col-12">
+              <!-- Tabs -->
+              <ul class="nav nav-tabs" id="productTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab">
+                    Thông tin chi tiết
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="exchange-tab" data-bs-toggle="tab" data-bs-target="#exchange" type="button" role="tab">
+                    Exchange Regulation
+                  </button>
+                </li>
+              </ul>
+          
+              <!-- Nội dung từng tab -->
+              <div class="tab-content border border-top-0 p-3" id="productTabContent">
+                <!-- Tab 1 -->
+                <div class="tab-pane fade show active" id="detail" role="tabpanel">
+                    <p><span><b>I. Thông tin sản phẩm</b></span> <br>
+                        <ul>
+                            <li> Tên sản phẩm: Core MR - Kính cường lực bảo vệ ống kính camera điện thoại</li>
+                            <li>Dành cho: iPhone 16</li>
+                            <li>Kích thước (Dài x Rộng x Cao): 6.5 x 6.2 x 0.35 cm</li>
+                            <li> Chất liệu:
+                                <ul>
+                                    <li>Khung: Hợp kim nhôm (Aluminum Metal Frame)</li>
+                                    <li>Kính: Kính cường lực 9H (9H Hardness Tempered Glass)</li>
+                                </ul>
+                            </li>
+                            <li>Lớp in: Black Silk Print</li>
+                            <li> Xuất xứ: Trung Quốc</li>
+                            <li>Mã sản phẩm: Core MR</li>
+                        </ul>
+                        <span><b>II. Tính năng nổi bật</b></span> 
+                        <ul>
+                            <li>Chống trầy xước 9H: Bảo vệ ống kính khỏi các tác động như chìa khóa, kẹp giấy… trong quá trình sử dụng hàng ngày.</li>
+                            <li>Dễ dàng gắn vào: Có sẵn keo 3M giúp người dùng dễ dàng tự gắn mà không cần chuyên môn.</li>
+                            <li>Chống vỡ: Lớp film đặc biệt giúp hạn chế việc vỡ vụn kính khi có va đập mạnh.</li>
+                            <li>Chống dấu vân tay: Dễ lau chùi, giữ cho ống kính luôn sạch sẽ.</li>
+                            <li>Tăng chất lượng ảnh chụp: Thiết kế viền cao giúp tăng độ sắc nét và ánh sáng khi chụp ảnh.</li>
+                            <li>Tăng tính thẩm mỹ: Khung nhôm tạo cảm giác sang trọng và tinh tế, không phá vỡ thiết kế nguyên bản của máy.</li>
+                        </ul>
+                        <span><b>II. Bộ sản phẩm bao gồm</b></span>
+                        <ul>
+                            <li>1 x Kính bảo vệ ống kính camera (Core MR)</li>
+                            <li>1 x Sticker loại bỏ bụi (Dust removal sticker)</li>
+                            <li>1 x Khăn lau (Cleaning Wipe)</li>
+                        </ul>
+                    </p>
+                </div>
+          
+                <!-- Tab 2 -->
+                <div class="tab-pane fade" id="exchange" role="tabpanel">
+                  <p><span><b>I. Điều kiện đổi</b></span> <br>
+                   <ul>
+                    <li> Khách hàng phải cung cấp đầy đủ video/hình ảnh quay chụp khi khui mở kiện hàng, cùng với biên nhận mua hàng.</li>
+                    <li>Sản phẩm vẫn giữ nguyên trạng thái ban đầu bao gồm cả tem mác thương hiệu và phụ kiện đi kèm nếu có, không bị chỉnh sửa, không bị bẩn hoặc bị tác động bởi hóa chất, không được giặt ủi, không có mùi lạ và không có dấu hiệu đã sử dụng.</li>
+                    <li>Trong trường hợp đổi trả, phí vận chuyển ban đầu sẽ không được hoàn lại.</li>
+                   </ul>
+                   <p><span><b>II. Các trường hợp đổi trả hàng</b></span> <br>
+                    LSoul cam kết đổi trả miễn phí: <br>
+                    <ul>
+                        <li> Nếu sản phẩm bị lỗi kỹ thuật từ phía nhà sản xuất.</li>
+                        <li>Nếu LSoul giao không đúng mẫu mã hoặc không đủ số lượng như trong đơn đặt hàng.</li>
+                    </ul>                
+                    LSoul yêu cầu đối với khách hàng muốn hỗ trợ đổi màu: <br>
+                    <ul>
+                        <li>Sản phẩm cần đổi phải còn đủ số lượng để giao.</li>
+                        <li>Khách hàng tự thanh toán phí vận chuyển 2 chiều và chi phí phát sinh nếu có.</li>
+                    </ul>
+                    LSoul yêu cầu đối với khách hàng muốn đổi sản phẩm khác so với đơn đặt hàng ban đầu: <br>
+                    <ul>
+                        <li>Trong trường hợp sản phẩm đổi có giá trị cao hơn, khách hàng cần bù phần chênh lệch.</li>
+                        <li>Trong trường hợp sản phẩm đổi có giá trị thấp hơn, LSoul sẽ không hoàn trả phần chênh lệch.</li>
+                        <li>Khách hàng tự thanh toán phí vận chuyển 2 chiều và chi phí phát sinh nếu có.</li>
+                    </ul>
+                    <p><span><b>III. Sản phẩm không đủ điều kiện đổi trả</b></span> <br>
+                    <ul>
+                        <li>Trường hợp sản phẩm bị cắt tag hay bị hỏng do sử dụng không đúng cách sẽ không được LSoul chấp nhận đổi trả.</li>
+                        <li>Quá 48 giờ kể từ khi khách nhận hàng, nếu LSoul không nhận được phản hồi về tình trạng của sản phẩm, LSoul sẽ coi như sản phẩm đã được chấp nhận.</li>
+                        <li>Sản phẩm thuộc các chương trình khuyến mãi, giảm giá mà không có lỗi từ nhà sản xuất sẽ không được LSoul chấp nhận đổi trả.</li>
+                        <li>LSoul có quyền từ chối mọi yêu cầu đổi trả hàng nếu khách hàng không tuân thủ theo các quy định về chính sách đổi trả của LSoul</li>
+                    </ul>
+                    <p><span><b>IV. Thời gian quy định đổi hàng</b></span> <br>
+                    <ul>
+                        <li>Khách hàng cần gửi trả sản phẩm trong vòng 7 ngày kể từ ngày nhận hàng. Sau thời hạn này, LSoul có quyền từ chối mọi yêu cầu đổi trả từ phía khách hàng.</li>
+                        <li>Khách hàng có thể đến trực tiếp cửa hàng của LSoul để đổi trả sản phẩm hoặc sử dụng dịch vụ chuyển phát nhanh.</li>
+                    </ul>
+                </p>
+
+                </div>
+          
+                <!-- Tab 3 -->
+                <div class="tab-pane fade" id="care" role="tabpanel">
+                  - Giặt tay với nước lạnh để giữ form và chất liệu tốt nhất.<br>
+                  - Không sử dụng thuốc tẩy.<br>
+                  - Ủi ở nhiệt độ thấp và tránh tiếp xúc trực tiếp với đinh tán hoặc chi tiết da.
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="text-center mb-4"><strong>DÀNH RIÊNG CHO BẠN</strong></h4>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+            
+                  <!-- Sản phẩm 1 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple10.jpg" class="img-fluid" alt="NIYA DRESS" width="120px">
+                    <p class="mt-2 mb-1"><strong>CORE NUKIN</strong></p>
+                    <p>19.199.000 VNĐ</p>
+                  </div>
+            
+                  <!-- Sản phẩm 2 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple12.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>C-SUB</strong></p>
+                    <p>11.199.000 VNĐ</p>
+                  </div>
+            
+                  <!-- Sản phẩm 3 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple11.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>MACH STAND</strong></p>
+                    <p>10.099.000 VNĐ</p>
+                  </div>
+
+                   <!-- Sản phẩm 4 -->
+                   <div class="swiper-slide text-center">
+                    <img src="../img/apple7.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>CLASS CM</strong></p>
+                    <p>13.099.000 VNĐ</p>
+                  </div>
+                </div>
+            
+                <!-- Nút điều hướng -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
 
 
     <script>
@@ -573,6 +735,32 @@
                 }
             }
         }
+
+
+
+        /*--------------------------THÔNG TIN DÀNH CHO BẠN------------------------*/
+        const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 5,
+      },
+    },
+  });
     </script>
 </body>
 </html>
