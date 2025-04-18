@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const closebtn = document.querySelector('#close');
     const phoneInput = document.getElementById('phone');
     const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
 
     const phoneError = document.getElementById('phoneError');
     const passwordError = document.getElementById('passwordError');
@@ -92,6 +94,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (confirmPasswordInput.value.trim() !== '') {
             validateConfirmPassword();
         }
+    });
+
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+    
+    toggleConfirmPassword.addEventListener('click', function() {
+        const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmPasswordInput.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
     });
 
     form.addEventListener('submit', function(e) {
