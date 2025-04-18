@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link href="../font/Quicksand-VariableFont_wght.ttf" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/index.js"></script>
@@ -401,9 +402,23 @@
             margin-left: 30px;
         }
 
-    /* ----------------Thông tin đổi trả --------------------*/
+        /* ----------------Thông tin đổi trả --------------------*/
         .exchange p span{
             font-weight: bold;
+        }
+        /*----------------------Thông tin dành riêng cho bạn------------------*/
+        .swiper-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        float: left;
         }
     </style>
 </head>
@@ -620,8 +635,48 @@
                 </div>
               </div>
             </div>
-          </div>
-    </div>
+        </div>
+        <div class="row">
+            <h4 class="text-center mb-4"><strong>DÀNH RIÊNG CHO BẠN</strong></h4>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+            
+                  <!-- Sản phẩm 1 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple10.jpg" class="img-fluid" alt="NIYA DRESS" width="120px">
+                    <p class="mt-2 mb-1"><strong>CORE NUKIN</strong></p>
+                    <p>19.199.000 VNĐ</p>
+                  </div>
+            
+                  <!-- Sản phẩm 2 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple12.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>C-SUB</strong></p>
+                    <p>11.199.000 VNĐ</p>
+                  </div>
+            
+                  <!-- Sản phẩm 3 -->
+                  <div class="swiper-slide text-center">
+                    <img src="../img/apple11.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>MACH STAND</strong></p>
+                    <p>10.099.000 VNĐ</p>
+                  </div>
+
+                   <!-- Sản phẩm 4 -->
+                   <div class="swiper-slide text-center">
+                    <img src="../img/apple7.jpg" class="img-fluid" alt="ANI SET" width="120px">
+                    <p class="mt-2 mb-1"><strong>CLASS CM</strong></p>
+                    <p>13.099.000 VNĐ</p>
+                  </div>
+                </div>
+            
+                <!-- Nút điều hướng -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
 
 
     <script>
@@ -653,6 +708,32 @@
                 }
             }
         }
+
+
+
+        /*--------------------------THÔNG TIN DÀNH CHO BẠN------------------------*/
+        const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 5,
+      },
+    },
+  });
     </script>
 </body>
 </html>
