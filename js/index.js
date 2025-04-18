@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById('password');
     const togglePassword = document.getElementById('togglePassword');
     const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const cartbtn = document.querySelector('#bucket');
 
     const phoneError = document.getElementById('phoneError');
     const passwordError = document.getElementById('passwordError');
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
 
     const patterns = {
         phone: /^0\d{9}$/,
@@ -129,5 +131,30 @@ document.addEventListener("DOMContentLoaded", function () {
             // form.submit();
         }
     });
+
+    /* --------------GIỎ HÀNG------------------------*/
+    
+
+    // Hiện giỏ hàng
+    if(cartbtn){
+        cartbtn.addEventListener("click", function() {
+            const cartContainer = document.querySelector('.cart-container');
+            if(closeOut){
+                closeOut.style.display = "none";
+            }
+        })
+    }
+
+    // // Đóng khi click nút X
+    // closeBtn.addEventListener("click", function () {
+    //     cartContainer.classList.remove("show");
+    // });
+
+    // // Đóng khi click ra ngoài
+    // document.addEventListener("click", function (e) {
+    //     if (!cartContainer.contains(e.target) && !cartIcon.contains(e.target)) {
+    //         cartContainer.classList.remove("show");
+    //     }
+    // });
     
 });

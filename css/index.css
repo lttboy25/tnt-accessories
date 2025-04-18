@@ -367,7 +367,7 @@
             border-color: #e60000 !important;
         }
 
-        /* --------------------------------------------------------- */
+        /* -------------------------GIỎ HÀNG------------------------------- */
         #cart {
             color: white;
             position: absolute;
@@ -375,6 +375,31 @@
             right: 30px;
             font-size: 20px;
         }
+
+        .cart-container {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .cart-container-form{
+            width: 500px;
+            height: 550px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+
+        /*-----------------------------------------------------------------*/
 
         #search {
             color: white;
@@ -759,4 +784,111 @@
         #privatefooter ul{
             position: absolute;
             top: 150px;
+        }
+
+        
+        /* Khi hiển thị */
+        .cart-container.show {
+            right: 0;
+            display: block;         
+        }
+        
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .cart-header {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .product-image {
+            max-height: 150px;
+        }
+        .product-details {
+            padding-left: 15px;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .product-size {
+            margin-top: 10px;
+        }
+        .product-quantity {
+            margin-top: 10px;
+        }
+        .product-price {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+        }
+        .action-buttons {
+            text-align: right;
+        }
+        .action-button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .discount-code {
+            padding: 10px 0;
+            margin-top: 15px;
+        }
+        .apply-button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 8px 20px;
+            font-weight: bold;
+        }
+        .summary {
+            margin-top: 15px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .total-price {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .checkout-button {
+            background-color: black;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .close-button {
+            font-size: 24px;
+            background: none;
+            border: none;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+        .cart-container {
+            position: relative;
+            padding-top: 15px;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
         }
