@@ -145,16 +145,23 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-    // // Đóng khi click nút X
-    // closeBtn.addEventListener("click", function () {
-    //     cartContainer.classList.remove("show");
-    // });
 
-    // // Đóng khi click ra ngoài
-    // document.addEventListener("click", function (e) {
-    //     if (!cartContainer.contains(e.target) && !cartIcon.contains(e.target)) {
-    //         cartContainer.classList.remove("show");
-    //     }
-    // });
-    
+
+});
+document.addEventListener("click", function (e) {
+    const modal = document.getElementById("cartModal");
+    const cartIcon = document.getElementById("cart");
+    const modalDialog = modal.querySelector(".modal-dialog");
+
+    const clickedOutsideModal = !modalDialog.contains(e.target);
+    const clickedIcon = cartIcon.contains(e.target);
+
+    const isModalVisible = modal.classList.contains("show");
+
+    if (isModalVisible && clickedOutsideModal && !clickedIcon) {
+        const bsModal = bootstrap.Modal.getInstance(modal);
+        if (bsModal) {
+            bsModal.hide();
+        }
+    }
 });

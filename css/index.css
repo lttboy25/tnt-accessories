@@ -786,66 +786,57 @@
             top: 150px;
         }
 
-        
-        /* Khi hiển thị */
-        .cart-container.show {
-            right: 0;
-            display: block;         
+        /*----------------------------------GIỎ HÀNG---------------------*/     
+        .modal-dialog{
+            position: fixed; 
+            right: 0; 
+            margin: 0; 
+            width: 500px; 
+            max-width: 100vw;
         }
-        
-        .close-button {
-            background: none;
-            border: none;
-            font-size: 30px;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
+        .modal-content{
+            height: 100vh; 
+            border-left: 1px solid #ccc; 
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
         }
-
+        .cart-header{
+            position: absolute; 
+            left: -210px; 
+            top: 30px;
+        }
+        .btn-close{
+            position: absolute; 
+            right: -210px; 
+            top: 30px;
+        }
         .cart-header {
             font-weight: bold;
             font-size: 24px;
             margin-bottom: 20px;
         }
-        .cart-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .product-image {
-            max-height: 150px;
-        }
-        .product-details {
-            padding-left: 15px;
-        }
         .product-name {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 15px;
         }
-        .product-size {
+        .product-size, .product-quantity{
+            font-size: 13px;
             margin-top: 10px;
         }
-        .product-quantity {
-            margin-top: 10px;
-        }
-        .product-price {
+        .product-price{
+            position: absolute;
+            right: -150px;
+            top: 80px;
+            font-size: 15px;
             font-weight: bold;
-            font-size: 18px;
-            text-align: right;
-        }
-        .action-buttons {
-            text-align: right;
-        }
-        .action-button {
-            background: none;
-            border: none;
-            font-size: 18px;
-            margin-left: 10px;
-            cursor: pointer;
         }
         .discount-code {
             padding: 10px 0;
-            margin-top: 15px;
+            margin-top: 50px;
+            position: relative;
+        }
+        .button-apply{
+            position: absolute;
+            right: -150px;
         }
         .apply-button {
             background-color: white;
@@ -855,16 +846,15 @@
             font-weight: bold;
         }
         .summary {
-            margin-top: 15px;
-        }
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
+            margin-top: 80px;
+            position: relative;
         }
         .total-price {
             font-weight: bold;
-            font-size: 20px;
+            position: absolute;
+            right: -150px;
+            top: 50px;
+            font-size: 15px;
         }
         .checkout-button {
             background-color: black;
@@ -873,22 +863,83 @@
             width: 100%;
             padding: 12px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 130px;
             font-size: 16px;
+            height: 45px;
         }
-        .close-button {
-            font-size: 24px;
-            background: none;
-            border: none;
-            position: absolute;
-            right: 15px;
-            top: 10px;
+        .modal-content {
+            border: none !important;
+            box-shadow: none !important;
         }
-        .cart-container {
+
+        .modal-header,
+        .modal-footer {
+            border: none !important;
+        }
+
+        .cart-item {
+            border: none !important;
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+
+        hr {
+            display: none;
+        }
+        .car-item-1{
             position: relative;
-            padding-top: 15px;
         }
-        .note {
-            font-size: 14px;
-            color: #666;
+        .cart-img{
+            position: absolute;
+            left: -120px;
+            margin-top: 5px;
+        }
+        .product-details{
+            margin-top: 30px;
+        }
+        .product-name{
+            font-size: 15px;
+        }
+        .cart-img-2{
+            position: absolute;
+            left: -120px;
+            margin-top: 5px;
+        }
+        .product-details-2{
+            margin-top: 80px;
+        }
+        .product-price-2{
+            position: absolute;
+            right: -150px;
+            top: 240px;
+        }
+        .product-price-2{
+            font-weight: bold;
+            font-size: 15px;
+            text-align: right;
+        }
+        .text-control{
+            position: absolute;
+            left: -120px;
+        }
+        .text-control input{
+            width: 250px;
+            height: 45px;
+        }
+        .price-not{
+            position: absolute;
+            left: -120px;
+        }
+        .price{
+            position: absolute;
+            right: -150px;
+            font-size: 13px;
+        }
+        .price-off{
+            position: relative;
+        }
+        .total{
+            position: absolute;
+            left: -120px;
+            top: 50px;
         }
