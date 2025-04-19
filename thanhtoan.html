@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THÔNG TIN THANH TOÁN</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="./font/Quicksand-VariableFont_wght.ttf" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+    <style>
+        .nav-left{
+            
+            float: left;
+            margin-top: 80px;
+            width: 50%;
+            
+        }
+        .nav-left .title-left p{
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-left: 100px;
+        }
+        .title-left{
+            border-bottom: 1px solid silver;
+            width: 90%;
+        }
+        .nav-right{
+            float: left;
+            margin-top: 80px;
+            width: 50%;
+        }
+        .nav-right p{
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-left: 100px;
+        }
+        .title-left{
+            border-bottom: 1px solid silver;
+            width: 90%;
+        }
+        .content-left p{
+            margin-top: 30px;
+            margin-left: 140px;
+        }
+        .delivery-font{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .content-left form label{
+            margin-left: 140px;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+        .content-left form select{
+            margin-left: 140px;
+            margin-top: 10px;
+            width: 600px;
+            height: 40px;
+            padding-left: 10px;
+        }
+        .content-left form input{
+            margin-left: 140px;
+            margin-top: 10px;
+            width: 600px;
+            height: 40px;
+            padding-left: 10px;
+        }
+        .content-left form textarea{
+            margin-left: 140px;
+            margin-top: 10px;
+            width: 600px;
+            height: 100px;
+            padding-left: 10px;
+        }
+        
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">  
+    <header>
+        <nav class="navbar navbar-expand-sm bg-black navbar-dark">
+            <div class="logo">
+                <div><a href="../index.html">TnT accessories<sup>®</sup></a></div>
+            </div>
+            <ul>
+                <li><a href="../html/about.html">ABOUT</a></li>
+                <li class="nav-item dropdown">
+                    <a href="./html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
+                    <ul class="dropdown-menu" style="padding-right: 50px;" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="#" style="color: black;">NEW</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
+                        <li><a class="dropdown-item" href="../html/apple.html" style="color: black;">APPLE</a></li>
+                        <li><a class="dropdown-item" href="../html/product.html" style="color: black;">SAMSUNG</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">CATALOGUE</a></li>
+                <li><a href="../html/contact.html">CONTACT US</a></li>
+
+                <li id="login" class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
+                <div class="sign-in">
+                    <div class="sign-in-form">
+                        <h2>Đăng nhập <span id="close"><i class="bi bi-x"></i></span></h2>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="phone" placeholder="Số điện thoại">
+                                <i class="bi bi-telephone form-icon"></i>
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                                <i class="bi bi-lock form-icon"></i>
+                                <i class="bi bi-eye-slash eye-icon" id="togglePassword"></i>
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+
+                            <button type="submit" class="login-btn">Đăng nhập
+                            </button>
+
+                            <div class="or-divider">Hoặc tiếp tục với</div>
+        
+                            <div class="social-login">
+                                <button class="social-btn fb-btn">
+                                    <i class="bi bi-facebook"></i>
+                                </button>
+                                <button class="social-btn google-btn">
+                                    <i class="bi bi-google"></i>
+                                </button>
+                                <button class="social-btn apple-btn">
+                                    <i class="bi bi-apple"></i>
+                                </button>
+                            </div>  
+
+                            <div class="register-link">
+                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <li id="bucket" class="nav-item"><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart" id="cart"></i></a></li>
+                <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="position: relative;">
+                            <div class="cart-header">GIỎ HÀNG</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-item-1">
+                                <div class="cart-img">
+                                    <img src="../img/apple11.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details">
+                                    <div class="product-name">MACH STAND</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price">10.099.000 VND</div>
+                            </div>
+
+                            <!-- Sản phẩm trong giỏ hàng 2 -->
+                            <div class="cart-item-2">
+                                <div class="cart-img-2">
+                                    <img src="../img/apple10.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details-2">
+                                    <div class="product-name">CORE NUKIN</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price-2">19.199.000 VND</div>
+                            </div>
+
+                            <div class="discount-code">
+                                <div class="text-control">
+                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
+                                </div>
+                                <div class="button-apply">
+                                    <button class="apply-button w-100">Áp dụng</button>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <div class="price-temp">
+                                    <div class="price-not">Giá tạm tính</div>
+                                    <div class="price">29.298.000 VND</div>
+                                </div>
+                                <div class="price-off">
+                                    <div class="total">Tổng tiền <span class="note">(Chưa bao gồm thuế, nếu có)</span></div>
+                                    <div class="total-price">29.298.000 VND</div>
+                                </div>
+                            </div>
+                            <button class="checkout-button">ĐẶT HÀNG</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav>
+        <div class="nav-left">
+           <div class="title-left">
+                <p>THÔNG TIN ĐƠN HÀNG</p>
+            </div>
+            <div class="content-left">
+                <p class="delivery-font">Delivery details</p>
+                <p style="font-size: 20px; margin-top: 5px;">Chi tiết thanh toán</p>
+                <form>
+                    <label>QUỐC GIA <span style="color: red;">*</span></label> <br>
+                    <select required>
+                        <option value="VietNam" selected>VIETNAM</option>
+                        <option value="Canada" >CANADA</option>
+                        <option value="Thailan">THAILAN</option>
+                    </select> 
+                    <label>HỌ <span style="color: red;">*</span></label> <br>
+                    <input type="text" id="ho" name="ho" placeholder="Nhập họ" required>
+                    <div class="error-message" id="hoError"></div> 
+                    <label>TÊN <span style="color: red;">*</span></label> <br>
+                    <input type="text" id="ten" name="ten" placeholder="Nhập tên" required>
+                    <div class="error-message" id="tenError"></div>
+                    <label>EMAIL <span style="color: red;">*</span></label> <br>
+                    <input type="email" id="email" name="email" placeholder="Nhập email" required>
+                    <div class="error-message" id="emailError"></div>
+                    <label>SỐ ĐIỆN THOẠI <span style="color: red;">*</span></label> <br>
+                    <input type="text" id="sodienthoai" name="sodienthoai" placeholder="Nhập số điện thoại" required>
+                    <div class="error-message" id="phoneError"></div>
+                    <label>ĐỊA CHỈ <span style="color: red;">*</span></label> <br>
+                    <input type="text" id="diachi" name="diachi" placeholder="Nhập địa chỉ của bạn" required>
+                    <div class="error-message" id="addressError"></div>
+                    <label>TỈNH/THÀNH PHỐ <span style="color: red;">*</span></label> <br>
+                    <input type="text" id="thanhpho" name="thanhpho" placeholder="Nhập thành phố của bạn" required>
+                    <div class="error-message" id="cityError"></div>
+                    <label>APT NUMBER AND OTHER NOTES <span style="color: red;">*</span></label> <br>
+                    <textarea name="apt" id="apt" placeholder="Plase note your Apartment number (*) and other special not for delivery"></textarea>
+                    <div class="error-message" id="cityError"></div>
+                </form>
+            </div>
+           
+        </div>
+        <div class="nav-right">
+            <div class="title-left">
+                <p>TÓM TẮT ĐƠN HÀNG</p>
+           </div>
+           
+            
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById("ho").addEventListener("blur", function() {
+            let value = this.value.trim();
+            let regex = /^[A-Za-zÀ-ỹ\s]{2,30}$/;
+            let errorMessage = document.getElementById("hoError");
+
+            // Kiểm tra nếu tên không hợp lệ
+            if (!regex.test(value)) {
+                errorMessage.textContent = "Họ chỉ được chứa chữ cái, có độ dài từ 2 đến 30 ký tự.";
+                errorMessage.style.color = "red"; // Đổi màu chữ thông báo lỗi thành đỏ
+            } else {
+                errorMessage.textContent = ""; // Xóa thông báo lỗi nếu tên hợp lệ
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -145,8 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-
-
 });
 document.addEventListener("click", function (e) {
     const modal = document.getElementById("cartModal");
@@ -165,3 +163,10 @@ document.addEventListener("click", function (e) {
         }
     }
 });
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeWindow() {
+    window.close();
+}
