@@ -8,18 +8,13 @@
             box-sizing: border-box;
             margin: 0 auto  ;
         }
-        /* Header Styles */
+        /* -----------------Header--------------------- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             background-color: black;
-        }
-
-        @font-face {
-            font-family: 'Arareelike';
-            src: url(../FRONTS/Adarsh\ Sans\ Italic.otf) format('opentype');
         }
 
         .logo {
@@ -399,7 +394,7 @@
         }
         
 
-        /*-----------------------------------------------------------------*/
+        /*----------------------------Tìm kiếm-------------------------------------*/
 
         #search {
             color: white;
@@ -408,6 +403,37 @@
             right: -20px;
             font-size: 20px;
         }
+
+        .search input {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            opacity: 0;  
+            transform: translateX(-10px);
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: -7px;
+            left: 970px;
+            border-radius: 108px;
+            border: 1px solid white;
+            color: white;
+            background-color: black;
+            padding: 0 15px;
+            outline: none;
+        }
+
+        /* Khi input hiển thị */
+        .search input.search-active {
+            opacity: 1;
+            transform: translateX(0);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Khi input ẩn */
+        .search input.search-inactive {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
         /* -----------------------------center---------------------------- */
         section{
             height: 300px;
@@ -947,3 +973,5 @@
             left: -120px;
             top: 50px;
         }
+
+
