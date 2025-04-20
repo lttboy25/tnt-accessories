@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const phoneError = document.getElementById('phoneError');
     const passwordError = document.getElementById('passwordError');
+    // ---------Sự kiện nhấn vào nút đăng nhập--------------
     if (loginbtn) {
         loginbtn.addEventListener("click", function () {
             const signIn = document.querySelector('.sign-in');
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    // ---------------Điều kiện đăng nhập------------
     const patterns = {
         phone: /^0\d{9}$/,
         password: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/,
@@ -49,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         input.classList.remove('input-error');
     }
 
+    // -----------Kiểm tra số điện thoại-----------
     function validatePhone() {
         const value = phoneInput.value.trim();
         
@@ -64,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return true;
         }
     }
+
+    // -------------Kiểm tra mật khẩu--------------
 
     function validatePassword() {
         const value = passwordInput.value.trim();
@@ -110,32 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         confirmPasswordInput.setAttribute('type', type);
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate all fields
-        const isPhoneValid = validatePhone();
-        const isPasswordValid = validatePassword();
-        
-        // Submit form if all validations pass
-        if (isPhoneValid && isPasswordValid && isConfirmPasswordValid && 
-            isNameValid && isEmailValid && isDOBValid && 
-            isGenderValid && areTermsAccepted) {
-            
-            // Show success message
-            alert('Đăng nhập thành công!');
-            
-            // You can submit the form here if needed
-            // form.submit();
-        }
-    });
-
-    /* --------------GIỎ HÀNG------------------------*/
-    
-
-   
+    });  
 
 });
 

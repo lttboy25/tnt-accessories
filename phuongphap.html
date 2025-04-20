@@ -3,18 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link href="../font/Quicksand-VariableFont_wght.ttf" rel="stylesheet">
+    <title>PHƯƠNG THỨC THANH TOÁN</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="./font/Quicksand-VariableFont_wght.ttf" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/product.css">
-    <script src="../js/index.js"></script>
-    
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/thanhtoan.css">
+    <script src="./js/index.js"></script>
+    <script src="./js/thanhtoan.js"></script>
+    <style>
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: -1px;
+            position: relative;
+            height: 100px;
+        }
+        
+        .payment-logo {
+            width: 80px;
+            height: 50px;
+            background-color: #f0f0f0;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            position: absolute;
+            left: 180px;
+        }
+        
+        .payment-method {
+            font-weight: normal;
+            color: #333;
+            margin-left: 1px;
+            position: absolute;
+            left: 290px;
+        }
+        
+        .checkbox-container {
+            margin-right: 10px;
+            position: absolute;
+            left: 150px;
+        }
 
+        
+        .terms {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 150px;
+            padding-right: 20px;
+        }
+        
+       .terms label{
+            margin-left: 10px;
+       }
+        
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            position: absolute;
+            left: 180px;
+        }
+        
+        .button-container .back-button a{
+            text-decoration: none;
+            color: #000;
+        }
+        .back-button {
+            padding: 12px 20px;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+            font-weight: bold;
+            cursor: pointer;
+            width: 120px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .pay-button {
+            padding: 12px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">  
     <header>
         <nav class="navbar navbar-expand-sm bg-black navbar-dark">
             <div class="logo">
@@ -23,7 +110,7 @@
             <ul>
                 <li><a href="../html/about.html">ABOUT</a></li>
                 <li class="nav-item dropdown">
-                    <a href="../html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
+                    <a href="./html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
                     <ul class="dropdown-menu" style="padding-right: 50px;" aria-labelledby="menuDropdown">
                         <li><a class="dropdown-item" href="#" style="color: black;">NEW</a></li>
                         <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
@@ -31,6 +118,7 @@
                         <li><a class="dropdown-item" href="../html/product.html" style="color: black;">SAMSUNG</a></li>
                     </ul>
                 </li>
+                <li><a href="#">CATALOGUE</a></li>
                 <li><a href="../html/contact.html">CONTACT US</a></li>
 
                 <li id="login" class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
@@ -138,128 +226,120 @@
                                     <div class="total-price">29.298.000 VND</div>
                                 </div>
                             </div>
-                            <button class="checkout-button" ><a href="../thanhtoan.html">ĐẶT HÀNG</a></button>
+                            <button class="checkout-button">ĐẶT HÀNG</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a>
-                  </li>
-                  <div class="search">
-                      <input type="text" placeholder=" Search:  " style="height: 30px; width: 190px; position: absolute; top: -7px; left: 800px; border-radius: 108px; border: 1px solid white; color: white; background-color: black; display: none;">
-                  </div>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
     </header>
-
-    <div class="container-fluid">
-        <div class="panel">
-            <img src="../img/opSamsung.jpg">
-        </div>
-        <div class="heading"><a href="../html/product.html">SAMSUNG</a></div>
-        <div class="menu">
-            <ul>
-                <li><a href="../html/samsungs.html">Galaxy S Series</a></li>
-                <li><a href="#top">Galaxy Z Series</a></li>
-                <li><a href="../html/samsunga.html">Galaxy A Series</a></li>       
-            </ul>
-        </div>
-        <section class="product-one">
-            <div class="product-one-content">
-                <!-- --------------------------- Dòng sản phẩm 1 ------------------------ -->
-                <div class="product-one-content-items">
-                    <div class="product-one-content-item">
-                        <img src="../img/product5.jpg">
-                        <div class="product-one-content-item-text">
-                            <ul>
-                                <li> <b>Ốp lưng linh hoạt thông minh Samsung Galaxy Z Flip5 chính hãng</b></li>
-                                <li><span class="new-price">872.000đ</span><span class="old-price"> 1.090.000đ</span></li>
-                                <li style="font-size: 13px; margin-top: 10px;">Member giảm thêm đến <span class="new-price">27.000đ</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="product-one-content-item">
-                        <img src="../img/product16.jpg">
-                        <div class="product-one-content-item-text">
-                            <ul>
-                                <li> <b>Ốp lưng linh hoạt Samsung Galaxy Z Fold5 chính hãng</b></li>
-                                <li><span class="new-price">749.000đ </span><span class="old-price"> 1.070.000đ</span></li>
-                                <li style="font-size: 13px; margin-top: 10px;">Member giảm thêm đến <span class="new-price">22.000đ</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="product-one-content-item">
-                        <img src="../img/product6.jpg">
-                        <div class="product-one-content-item-text">
-                            <ul>
-                                <li> <b>Ốp lưng linh hoạt Samsung Galaxy Z Flip5 chính hãng</b></li>
-                                <li><span class="new-price">776.000đ </span><span class="old-price"> 970.000đ</span></li>
-                                <li style="font-size: 13px; margin-top: 10px;">Member giảm thêm đến <span class="new-price">23.000đ</span></li>
-                            </ul>
-                        </div>
-                    </div>                    
-                    
-                    <div class="product-one-content-item">
-                        <img src="../img/product17.jpg">
-                        <div class="product-one-content-item-text">
-                            <ul>
-                                <li> <b>Bao da Samsung Galaxy Z Fold5 chính hãng</b></li>
-                                <li><span class="new-price">1.367.800đ </span><span class="old-price"> 1.954.000đ</span></li>
-                                <li style="font-size: 13px; margin-top: 10px;">Member giảm thêm đến <span class="new-price">41.000đ</span></li>
-                            </ul>
-                        </div>
-                    </div>                    
+    <nav>
+        <div class="nav-left">
+           <div class="title-left">
+                <p>METHOD</p>
+           </div>
+           <div class="payment-option">
+                <div class="checkbox-container">
+                    <input type="radio" id="cod" name="payment">
                 </div>
-                
-                <!-- --------------------------- Dòng sản phẩm 2 ------------------------ -->
-                
-
-                <!-- --------------------------- Dòng sản phẩm 3 ẩn ------------------------ -->
-                
-
-                <!-- --------------------------- Dòng sản phẩm 4 ẩn ------------------------ -->
-                
+                <div class="payment-logo">COD</div>
+                <label for="cod" class="payment-method">Thanh toán khi nhận hàng</label>
             </div>
-        </section>
-        
-        
-        <div class="row p-5" style="position: relative; margin-bottom: 100px; background-color: white; ">
-            <div class="col-3" id="logofooter">
-                <div class="logofooter">
-                    <div>TnT accessories<sup>®</sup></div>
+            <div class="payment-option">
+                <div class="checkbox-container">
+                    <input type="radio" id="vnpay" name="payment">
                 </div>
-                   
+                <div class="payment-logo">VNPAY</div>
+                <label for="vnpay" class="payment-method">Thanh toán qua VNPAY</label>
             </div>
-            <div class="col-2" id="contactfooter">
-                <p><b>CONTACT</b>  <br>
-                    tntaccessories@kdlad.kr
-                </p>
+            
+            <div class="payment-option">
+                <div class="checkbox-container">
+                    <input type="radio" id="vtcpay" name="payment">
+                </div>
+                <div class="payment-logo">VTC</div>
+                <label for="vtcpay" class="payment-method">VTCPay</label>
             </div>
-            <div class="col-3" id="contactfooter">
-                <p><b>COMPANY INFO</b> <br>
-                   <span style="font-size: 15px;"> 12 Nguyen Van Bao, Phuong 1, Quan Go vap <br>
-                    Ho Chi Minh City, Viet Nam</span>
-                </p>
+            
+            <div class="terms">
+                <input type="checkbox" id="terms" checked>
+                <label for="terms">Tôi đã đọc và đồng ý với chính sách và điều kiện giao dịch chung của website</label>
             </div>
-            <div class="col-2" id="followfooter">
-                <p style="margin-left: 30px;"><b>FOLLOW US</b></p>
-                <ul>
-                    <li><a href="#">FACEBOOK</a></li>
-                    <li><a href="#">INSTAGRAM</a></li>
-                    <li><a href="#">TWITTER</a></li>
-                </ul>
-            </div>
-            <div class="col-2" id="privatefooter">
-                <p style="margin-left: 30px;"><b>PRIVATE</b></p>
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                </ul>
+            
+            <div class="button-container">
+                <div class="back-button"><a href="./thanhtoan.html">Quay lại</a></div>
+                <div class="pay-button">THANH TOÁN</div>
             </div>
         </div>
-        
+        <div class="nav-right">
+            <div class="title-left">
+                <p>TÓM TẮT ĐƠN HÀNG</p>
+           </div>
+           <div class="content-right">
+               <div class="content-product-detail-1">
+                    <div>
+                        <img src="./img/apple11.jpg" width="200px">
+                    </div>
+                    <div class="bill-details">
+                        <p>
+                        <span class="title-details"> MACH STAND</span> <br>
+                        <span class="note">
+                                Màu: Trắng <br>
+                                Số lượng:&nbsp;&nbsp;x1
+                        </span>
+                        </p>
+                    </div>
+                    <div class="content-price">10.099.000 VND</div>
+               </div>
+               <div class="content-product-detail-2">
+                    <div>
+                        <img src="./img/apple10.jpg" width="200px">
+                    </div>
+                    <div class="bill-details">
+                        <p>
+                        <span class="title-details"> CORE NUKIN</span> <br>
+                        <span class="note">
+                                Màu: Trắng <br>
+                                Số lượng:&nbsp;&nbsp;x1
+                        </span>
+                        </p>
+                    </div>
+                    <div class="content-price">19.199.000 VND</div>
+               </div>
+               <div class="content-right-discount-code">
+                    <form >
+                        <input type="text" class="content-form-control" placeholder="Nhập mã giảm giá">
+                        <button class="apply-button">Áp dụng</button>
+                    </form>
+                </div>
+                <div class="content-right-summary">
+                    <div class="content-right-price-temp">
+                        <div class="content-right-price-not">Giá tạm tính</div>
+                        <div class="content-right-price">29.298.000 VND</div>
+                    </div>
+                    <div class="content-right-ship">
+                        <div class="content-right-price-ship">Phí vận chuyển</div>
+                        <div class="content-right-ship-cost">Hiển thị ở bước tiếp theo</div>
+                    </div>
+                    <div class="content-right-price-off">
+                        <div class="content-right-total">Tổng tiền <span class="note">(Chưa bao gồm thuế, nếu có)</span></div>
+                        <div class="content-right-total-price">29.298.000 VND</div>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>       
+    </nav>
     
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const payButton = document.querySelector(".pay-button");
+        payButton.addEventListener("click", function () {
+            alert("Thanh toán thành công!");
+        });
+    });
+    </script> -->
 </body>
 </html>
