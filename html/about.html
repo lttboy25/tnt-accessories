@@ -635,47 +635,48 @@
     </div>
 
     <script>
-        const cartbtn = document.querySelector('#bucket');
-     // Hiện giỏ hàng
-    if(cartbtn){
-        cartbtn.addEventListener("click", function() {
-            const cartContainer = document.querySelector('.cart-container');
-            if(closeOut){
-                closeOut.style.display = "none";
+        // Replace your current cart-related JavaScript with this improved version
+        document.addEventListener('DOMContentLoaded', function() {
+        // Close button within modal
+            const closeBtn = document.querySelector('.btn-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                const modal = document.getElementById('cartModal');
+                const bsModal = bootstrap.Modal.getInstance(modal);
+                if (bsModal) {
+                    bsModal.hide();
+                } else {
+                    // Fallback if getInstance doesn't work
+                    modal.classList.remove('show');
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                    const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+                    while (modalBackdrops.length > 0) {
+                    modalBackdrops[0].parentNode.removeChild(modalBackdrops[0]);
+                    }
+                }
+                });
             }
-        })
-    }
-    document.addEventListener("click", function (e) {
-        const modal = document.getElementById("cartModal");
-        const cartIcon = document.getElementById("cart");
-        const modalDialog = modal.querySelector(".modal-dialog");
 
-        const clickedOutsideModal = !modalDialog.contains(e.target);
-        const clickedIcon = cartIcon.contains(e.target);
+        // Clicking outside modal
+            document.addEventListener('click', function(e) {
+                const modal = document.getElementById('cartModal');
+                const cartIcon = document.getElementById('cart');
+                const modalDialog = modal.querySelector('.modal-dialog');
 
-        const isModalVisible = modal.classList.contains("show");
+                if (!modal.classList.contains('show')) return;
 
-        if (isModalVisible && clickedOutsideModal && !clickedIcon) {
-            const bsModal = bootstrap.Modal.getInstance(modal);
-            if (bsModal) {
-                bsModal.hide();
-            }
-        }
-    });
-    function openModal() {
-        document.getElementById("myModal").style.display = "block";
-        }
+                const clickedOutsideModal = !modalDialog.contains(e.target);
+                const clickedIcon = cartIcon && cartIcon.contains(e.target);
 
-        function closeWindow() {
-        window.close();
-    }
-    document.querySelector('.btn-close').addEventListener('click', function() {
-    const modal = document.getElementById('cartModal');
-    const bsModal = bootstrap.Modal.getInstance(modal);
-    if (bsModal) {
-        bsModal.hide();
-    }
-});
+                if (clickedOutsideModal && !clickedIcon) {
+                const bsModal = bootstrap.Modal.getInstance(modal);
+                if (bsModal) {
+                    bsModal.hide();
+                }
+                }
+            });
+        });
     </script>
 </body>
 </html>
