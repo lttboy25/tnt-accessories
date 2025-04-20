@@ -170,3 +170,79 @@ function openModal() {
     function closeWindow() {
     window.close();
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchIcon = document.getElementById("search");
+    const searchInput = document.querySelector('.search input');
+    let isSearchVisible = false;
+    if (searchIcon) {
+        searchIcon.addEventListener("click", function(e) {
+            e.preventDefault(); 
+            
+            if (searchInput) {
+                if (isSearchVisible) {
+                    searchInput.classList.remove('search-active');
+                    searchInput.classList.add('search-inactive');
+                    
+                    setTimeout(() => {
+                        searchInput.style.display = "none";
+                    }, 300); 
+                    
+                    isSearchVisible = false;
+                } else {
+                    searchInput.style.display = "block";
+                    
+                    setTimeout(() => {
+                        searchInput.classList.remove('search-inactive');
+                        searchInput.classList.add('search-active');
+                        searchInput.focus();
+                    }, 10);
+                    
+                    isSearchVisible = true;
+                }
+            }
+        });
+    }
+    
+    // Xử lý sự kiện click bên ngoài để đóng khung tìm kiếm
+    document.addEventListener("click", function(e) {
+        // Kiểm tra xem đã click bên ngoài cả icon tìm kiếm và input tìm kiếm chưa
+        if (searchInput && isSearchVisible && 
+            !searchInput.contains(e.target) && 
+            searchIcon && !searchIcon.contains(e.target)) {
+            
+            // Ẩn với hiệu ứng
+            searchInput.classList.remove('search-active');
+            searchInput.classList.add('search-inactive');
+            
+            setTimeout(() => {
+                searchInput.style.display = "none";
+            }, 300);
+            
+            isSearchVisible = false;
+        }
+    });
+    
+    // Xử lý sự kiện nhấn Enter để thực hiện tìm kiếm
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                // Thực hiện hành động tìm kiếm tại đây
+                const searchQuery = searchInput.value.trim();
+                if (searchQuery) {
+                    console.log("Đang tìm kiếm:", searchQuery);
+                    
+                    // Ẩn input với hiệu ứng
+                    searchInput.classList.remove('search-active');
+                    searchInput.classList.add('search-inactive');
+                    
+                    setTimeout(() => {
+                        searchInput.style.display = "none";
+                    }, 300);
+                    
+                    isSearchVisible = false;
+                }
+            }
+        });
+    }
+});

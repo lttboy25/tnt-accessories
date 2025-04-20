@@ -9,18 +9,14 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Header Styles */
+       /* -----------------Header--------------------- */
+           /* ------------------header------------------ */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     background-color: black;
-}
-
-@font-face {
-    font-family: 'Arareelike';
-    src: url(../font/Adarsh\Sans\Regular.otf) format('opentype');
 }
 
 .logo {
@@ -81,12 +77,84 @@ header ul li a:hover {
     color: rgb(10, 161, 10);
 }
 
+.nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        transition: all 0.2s ease;
+        color: white;
+        left: 0;
+        padding: 0;
+    }
+
+    
+.dropdown-menu {
+    margin-top: 0;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+
+.dropdown-menu {
+    transition: all 0.2s ease;
+    display: none;
+}
+
+    
+.dropdown-menu {
+    margin-top: 0;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+
+.dropdown-menu {
+    transition: all 0.2s ease;
+    display: none;
+}
+
+.dropdown-item{
+    max-width: 100px;
+}
 /* -------------------------Đăng nhập----------------------- */
 #person {
     color: white;
     position: absolute;
     top: -8px;
-    right: -200px;
+    right: 80px;
     font-size: 20px;
 }
 
@@ -296,17 +364,240 @@ header ul li a:hover {
     border-color: #e60000 !important;
 }
 
-/* --------------------------------------------------------- */
+/* -------------------------GIỎ HÀNG------------------------------- */
+#cart {
+    color: white;
+    position: absolute;
+    top: -8px;
+    right: 30px;
+    font-size: 20px;
+}
+
+.cart-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: none;
+}
+
+.cart-container-form{
+    width: 500px;
+    height: 550px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/*----------------------------------GIỎ HÀNG---------------------*/     
+.modal-dialog{
+    position: fixed; 
+    right: 0; 
+    margin: 0; 
+    width: 500px; 
+    max-width: 100vw;
+}
+.modal-content{
+    height: 100vh; 
+    border-left: 1px solid #ccc; 
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+.cart-header{
+    position: absolute; 
+    left: -210px; 
+    top: 30px;
+}
+.btn-close{
+    position: absolute; 
+    right: -210px; 
+    top: 30px;
+}
+.cart-header {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.product-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+.product-size, .product-quantity{
+    font-size: 13px;
+    margin-top: 10px;
+}
+.product-price{
+    position: absolute;
+    right: -150px;
+    top: 80px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.discount-code {
+    padding: 10px 0;
+    margin-top: 50px;
+    position: relative;
+}
+.button-apply{
+    position: absolute;
+    right: -150px;
+}
+.apply-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 8px 20px;
+    font-weight: bold;
+}
+.summary {
+    margin-top: 80px;
+    position: relative;
+}
+.total-price {
+    font-weight: bold;
+    position: absolute;
+    right: -150px;
+    top: 50px;
+    font-size: 15px;
+}
+.checkout-button {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 130px;
+    font-size: 16px;
+    height: 45px;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+.modal-content {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.modal-header,
+.modal-footer {
+    border: none !important;
+}
+
+.cart-item {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+hr {
+    display: none;
+}
+.car-item-1{
+    position: relative;
+}
+.cart-img{
+    position: absolute;
+    left: -120px;
+    margin-top: 5px;
+}
+.product-details{
+    margin-top: 30px;
+}
+.product-name{
+    font-size: 15px;
+}
+.cart-img-2{
+    position: absolute;
+    left: -120px;
+    margin-top: 5px;
+}
+.product-details-2{
+    margin-top: 80px;
+}
+.product-price-2{
+    position: absolute;
+    right: -150px;
+    top: 240px;
+}
+.product-price-2{
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+}
+.text-control{
+    position: absolute;
+    left: -120px;
+}
+.text-control input{
+    width: 250px;
+    height: 45px;
+}
+.price-not{
+    position: absolute;
+    left: -120px;
+}
+.price{
+    position: absolute;
+    right: -150px;
+    font-size: 13px;
+}
+.price-off{
+    position: relative;
+}
+.total{
+    position: absolute;
+    left: -120px;
+    top: 50px;
+}
+
+/*----------------------------Tìm kiếm-------------------------------------*/
 
 #search {
     color: white;
     position: absolute;
     top: -8px;
-    right: -150px;
+    right: -20px;
     font-size: 20px;
 }
 
-/* Registration Form Styles */
+.search input {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    opacity: 0;  
+    transform: translateX(-10px);
+    width: 190px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: 970px;
+    border-radius: 108px;
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+    padding: 0 15px;
+    outline: none;
+}
+
+/* Khi input hiển thị */
+.search input.search-active {
+    opacity: 1;
+    transform: translateX(0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Khi input ẩn */
+.search input.search-inactive {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* ----------------Form đăng nhập-------------------- */
 .registration-container {
     max-width: 450px;
     margin: 120px auto 50px;
