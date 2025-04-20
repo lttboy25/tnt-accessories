@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById('password');
     const togglePassword = document.getElementById('togglePassword');
     const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-    const cartbtn = document.querySelector('#bucket');
+    
 
     const phoneError = document.getElementById('phoneError');
     const passwordError = document.getElementById('passwordError');
@@ -135,41 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
     /* --------------GIỎ HÀNG------------------------*/
     
 
-    // Hiện giỏ hàng
-    if(cartbtn){
-        cartbtn.addEventListener("click", function() {
-            const cartContainer = document.querySelector('.cart-container');
-            if(closeOut){
-                closeOut.style.display = "none";
-            }
-        })
-    }
+   
 
 });
-document.addEventListener("click", function (e) {
-    const modal = document.getElementById("cartModal");
-    const cartIcon = document.getElementById("cart");
-    const modalDialog = modal.querySelector(".modal-dialog");
 
-    const clickedOutsideModal = !modalDialog.contains(e.target);
-    const clickedIcon = cartIcon.contains(e.target);
-
-    const isModalVisible = modal.classList.contains("show");
-
-    if (isModalVisible && clickedOutsideModal && !clickedIcon) {
-        const bsModal = bootstrap.Modal.getInstance(modal);
-        if (bsModal) {
-            bsModal.hide();
-        }
-    }
-});
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
-    }
-
-    function closeWindow() {
-    window.close();
-}
 
 document.addEventListener("DOMContentLoaded", function() {
     const searchIcon = document.getElementById("search");

@@ -346,5 +346,42 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const cartbtn = document.querySelector('#bucket');
+         // Hiện giỏ hàng
+        if(cartbtn){
+            cartbtn.addEventListener("click", function() {
+                const cartContainer = document.querySelector('.cart-container');
+                if(closeOut){
+                    closeOut.style.display = "none";
+                }
+            })
+        }
+        document.addEventListener("click", function (e) {
+        const modal = document.getElementById("cartModal");
+        const cartIcon = document.getElementById("cart");
+        const modalDialog = modal.querySelector(".modal-dialog");
+
+        const clickedOutsideModal = !modalDialog.contains(e.target);
+        const clickedIcon = cartIcon.contains(e.target);
+
+        const isModalVisible = modal.classList.contains("show");
+
+        if (isModalVisible && clickedOutsideModal && !clickedIcon) {
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            if (bsModal) {
+                bsModal.hide();
+            }
+        }
+        });
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+            }
+
+            function closeWindow() {
+            window.close();
+        }
+    </script>
 </body>
 </html>
