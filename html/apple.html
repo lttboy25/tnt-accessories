@@ -11,6 +11,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/product.css">
     <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <header>
@@ -68,17 +69,84 @@
                             </div>  
 
                             <div class="register-link">
-                                Chưa có tài khoản? <a href="../html/signup.html">Đăng ký ngay</a>
+                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
                             </div>
                         </form>
                     </div>
                 </div>
+                <li id="bucket" class="nav-item"><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart" id="cart"></i></a></li>
+                <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="position: relative;">
+                            <div class="cart-header">GIỎ HÀNG</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-item-1">
+                                <div class="cart-img">
+                                    <img src="../img/apple11.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details">
+                                    <div class="product-name">MACH STAND</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price">10.099.000 VND</div>
+                            </div>
 
+                            <!-- Sản phẩm trong giỏ hàng 2 -->
+                            <div class="cart-item-2">
+                                <div class="cart-img-2">
+                                    <img src="../img/apple10.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details-2">
+                                    <div class="product-name">CORE NUKIN</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price-2">19.199.000 VND</div>
+                            </div>
+
+                            <div class="discount-code">
+                                <div class="text-control">
+                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
+                                </div>
+                                <div class="button-apply">
+                                    <button class="apply-button w-100">Áp dụng</button>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <div class="price-temp">
+                                    <div class="price-not">Giá tạm tính</div>
+                                    <div class="price">29.298.000 VND</div>
+                                </div>
+                                <div class="price-off">
+                                    <div class="total">Tổng tiền <span class="note">(Chưa bao gồm thuế, nếu có)</span></div>
+                                    <div class="total-price">29.298.000 VND</div>
+                                </div>
+                            </div>
+                            <button class="checkout-button" ><a href="../thanhtoan.html">ĐẶT HÀNG</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
     </header>
-
     <div class="container-fluid">
         <div class="panel">
             <img src="../img/apple1.jpg">

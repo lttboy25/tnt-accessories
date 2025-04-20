@@ -142,8 +142,8 @@
         #person {
             color: white;
             position: absolute;
-            top: -8px;
-            right: -200px;
+            top: -3px;
+            right: 120px;
             font-size: 20px;
         }
 
@@ -531,6 +531,186 @@
             position: absolute;
             top: 150px;
         }
+        /*-------------------------GIỎ HÀNG-----------------------*/
+        .modal-dialog{
+            position: fixed; 
+            right: 0; 
+            margin: 0; 
+            width: 500px; 
+            max-width: 100vw;
+        }
+        .modal-content{
+            height: 100vh; 
+            border-left: 1px solid #ccc; 
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-header{
+            position: absolute; 
+            left: 30px; 
+            top: 30px;
+        }
+        .btn-close{
+            position: absolute; 
+            right: 30px; 
+            top: 30px;
+        }
+        .cart-header {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .product-size, .product-quantity{
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        .product-price{
+            position: absolute;
+            right: 50px;
+            top: 80px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .discount-code {
+            padding: 10px 0;
+            margin-top: 50px;
+            position: relative;
+        }
+        .button-apply{
+            position: absolute;
+            right: 50px;
+        }
+        .apply-button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 8px 20px;
+            font-weight: bold;
+        }
+        .summary {
+            margin-top: 100px;
+            position: relative;
+        }
+        .total-price {
+            font-weight: bold;
+            position: absolute;
+            right: -150px;
+            top: 50px;
+            font-size: 15px;
+        }
+        .checkout-button {
+            background-color: black;
+            color: white;
+            border: none;
+            width: 40%;
+            padding: 12px;
+            font-weight: bold;
+            margin-top: 130px;
+            font-size: 16px;
+            height: 45px;
+            margin-left: 150px;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        .modal-content {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border: none !important;
+        }
+
+        .cart-item {
+            border: none !important;
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+
+        hr {
+            display: none;
+        }
+        .car-item-1{
+            position: relative;
+        }
+        .cart-img{
+            position: absolute;
+            left: 50px;
+            margin-top: 5px;
+        }
+        .product-details{
+            margin-top: 30px;
+            margin-left: 180px;
+        }
+        .product-name{
+            font-size: 15px;
+        }
+        .cart-img-2{
+            position: absolute;
+            left: 50px;
+            margin-top: 5px;
+        }
+        .product-details-2{
+            margin-top: 80px;
+            margin-left: 180px;
+        }
+        .product-price-2{
+            position: absolute;
+            right: 50px;
+            top: 240px;
+        }
+        .product-price-2{
+            font-weight: bold;
+            font-size: 15px;
+            text-align: right;
+        }
+        .text-control{
+            position: absolute;
+            left: 20px;
+            top: 40px;
+        }
+        .text-control input{
+            width: 250px;
+            height: 45px;
+        }
+        .price-not{
+            position: absolute;
+            left: 40px;
+        }
+        .price{
+            position: absolute;
+            right: 50px;
+            font-size: 13px;
+        }
+        .price-off{
+            position: relative;
+        }
+        .total{
+            position: absolute;
+            left: 40px;
+            top: 50px;
+        }
+        .total-price{
+            position: absolute;
+            right: 50px;
+            top: 50px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #search {
+            color: white;
+            position: absolute;
+            top: -3px;
+            right: 30px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
@@ -543,7 +723,7 @@
             <ul>
                 <li><a href="../html/about.html">ABOUT</a></li>
                 <li class="nav-item dropdown">
-                    <a href="../html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
+                    <a href="./html/product.html" class="nav-link dropdown-toggle" id="menuDropdown" role="button" style="color: white;">PRODUCT</a>
                     <ul class="dropdown-menu" style="padding-right: 50px;" aria-labelledby="menuDropdown">
                         <li><a class="dropdown-item" href="#" style="color: black;">NEW</a></li>
                         <li><a class="dropdown-item" href="#" style="color: black;">BEST</a></li>
@@ -553,6 +733,7 @@
                 </li>
                 <li><a href="#">CATALOGUE</a></li>
                 <li><a href="../html/contact.html">CONTACT US</a></li>
+
                 <li id="login" class="nav-item"><a class="nav-link ms-5" href="#"><i class="bi bi-person" id="person"></i></a></li>
                 <div class="sign-in">
                     <div class="sign-in-form">
@@ -589,11 +770,80 @@
                             </div>  
 
                             <div class="register-link">
-                                Chưa có tài khoản? <a href="../html/signup.html">Đăng ký ngay</a>
+                                Chưa có tài khoản? <a href="./html/signup.html">Đăng ký ngay</a>
                             </div>
                         </form>
                     </div>
                 </div>
+                <li id="bucket" class="nav-item"><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart" id="cart"></i></a></li>
+                <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" data-bs-backdrop="false">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style="position: relative;">
+                            <div class="cart-header">GIỎ HÀNG</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-item-1">
+                                <div class="cart-img">
+                                    <img src="../img/apple11.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details">
+                                    <div class="product-name">MACH STAND</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price">10.099.000 VND</div>
+                            </div>
+
+                            <!-- Sản phẩm trong giỏ hàng 2 -->
+                            <div class="cart-item-2">
+                                <div class="cart-img-2">
+                                    <img src="../img/apple10.jpg" alt="LILI DRESS" class="product-image" width="100px" >
+                                </div>
+                                <div class="product-details-2">
+                                    <div class="product-name">CORE NUKIN</div>
+                                    <div class="product-size">
+                                        <span>Màu:</span>
+                                        <span class="ms-2">Trắng</span>
+                                    </div>
+                                    <div class="product-quantity">
+                                        <span>Số lượng</span>
+                                        <span class="ms-2">x1</span>
+                                    </div>
+                                </div>
+                                <div class="product-price-2">19.199.000 VND</div>
+                            </div>
+
+                            <div class="discount-code">
+                                <div class="text-control">
+                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
+                                </div>
+                                <div class="button-apply">
+                                    <button class="apply-button w-100">Áp dụng</button>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <div class="price-temp">
+                                    <div class="price-not">Giá tạm tính</div>
+                                    <div class="price">29.298.000 VND</div>
+                                </div>
+                                <div class="price-off">
+                                    <div class="total">Tổng tiền <span class="note">(Chưa bao gồm thuế, <br> nếu có)</span></div>
+                                    <div class="total-price">29.298.000 VND</div>
+                                </div>
+                            </div>
+                            <button class="checkout-button" ><a href="../thanhtoan.html">ĐẶT HÀNG</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search" id="search"></i></a></li>
             </ul>
         </nav>
@@ -705,5 +955,32 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("click", function (e) {
+    const modal = document.getElementById("cartModal");
+    const cartIcon = document.getElementById("cart");
+    const modalDialog = modal.querySelector(".modal-dialog");
+
+    const clickedOutsideModal = !modalDialog.contains(e.target);
+    const clickedIcon = cartIcon.contains(e.target);
+
+    const isModalVisible = modal.classList.contains("show");
+
+    if (isModalVisible && clickedOutsideModal && !clickedIcon) {
+        const bsModal = bootstrap.Modal.getInstance(modal);
+        if (bsModal) {
+            bsModal.hide();
+        }
+    }
+});
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeWindow() {
+    window.close();
+}
+    </script>
 </body>
 </html>
