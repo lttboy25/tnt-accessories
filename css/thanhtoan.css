@@ -1,0 +1,205 @@
+.nav-left{
+    float: left;
+    margin-top: 80px;
+    width: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+.nav-left .title-left p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.title-left{
+    border-bottom: 1px solid silver;
+    width: 90%;
+}
+.nav-right{
+    float: left;
+    margin-top: 80px;
+    width: 50%;
+    position: relative;
+}
+.nav-right .title-left p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.title-left{
+    border-bottom: 1px solid silver;
+    width: 90%;
+}
+.content-left p{
+    margin-top: 30px;
+    margin-left: 140px;
+}
+.delivery-font{
+    font-size: 18px;
+    font-weight: bold;
+}
+.content-left form label{
+    margin-left: 140px;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.content-left form select{
+    margin-left: 140px;
+    margin-top: 10px;
+    width: 600px;
+    height: 40px;
+    padding-left: 10px;
+}
+.content-left form input{
+    margin-left: 140px;
+    margin-top: 10px;
+    width: 600px;
+    height: 40px;
+    padding-left: 10px;
+}
+.content-left form textarea{
+    margin-left: 140px;
+    margin-top: 10px;
+    width: 600px;
+    height: 100px;
+    padding-left: 10px;
+}
+.content-left form button{
+    margin-left: 140px;
+    margin-top: 10px;
+}
+.content-left form button.cancle{
+    background-color: white;
+    color: black;
+    margin-right: 20px;
+    width: 150px;
+    border: 1px solid black;
+    height: 40px;
+}
+.content-left form button.continue{
+    background-color: black;
+    color: white;
+    width: 430px;
+    border: 1px solid black;
+    margin-left: 3px;
+    height: 40px;
+}
+/*----------------content-right------------------*/
+.content-right{
+    position: relative;
+}
+.content-right img{
+    margin-left: 100px;
+    float: left;
+}
+.content-right .bill-details{
+    margin-top: 30px;
+    margin-left: 250px;
+}
+.content-right .bill-details p{
+    margin-top: 60px;
+    margin-left: 100px;
+}
+.content-right .bill-details .title-details{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.content-right .bill-details .note{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.content-price{
+    margin-left: 550px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+}
+.content-product-detail-2{
+    margin-top: 180px;
+    position: relative;
+    height: 230px;
+}
+.content-right-discount-code{
+    margin-top: 10px;
+    position: relative;
+}
+.content-right-discount-code form{
+    position: relative;
+    width: 90%;
+    /* height: 60px; */
+    padding: 10px 10px;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+   
+    
+}
+.content-right-discount-code form input{
+    width: 500px;
+    margin-left: 10px;
+    height: 40px;
+    padding-left: 10px;
+    
+}
+.content-right-discount-code form button{
+    width: 120px;
+    height: 40px;
+    margin-left: 10px;
+}
+.content-right-summary {
+    margin-top: 20px;
+    position: relative;
+}
+.content-right-total-price {
+    font-weight: bold;
+    position: absolute;
+    right: 80px;
+    top: 100px;
+    font-size: 20px;
+}
+.content-right-price-not{
+    position: absolute;
+    left: 50px;
+}
+.content-right-price-ship{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+.content-right-ship-cost{
+    position: absolute;
+    right: 80px;
+    font-size: 15px;
+    top: 50px;
+}
+.content-right-price{
+    position: absolute;
+    right: 80px;
+    font-size: 15px;
+}
+.content-right-total{
+    position: absolute;
+    left: 50px;
+    top: 100px;
+}
+
+/*-----------------error message------------------*/
+.required {
+    color: red;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-left: 140px;
+    display: none;
+}
+
+.form-control.invalid {
+    border-color: red;
+}
+
+.show-error {
+    display: block;
+}

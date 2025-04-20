@@ -867,6 +867,10 @@
             font-size: 16px;
             height: 45px;
         }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
         .modal-content {
             border: none !important;
             box-shadow: none !important;
