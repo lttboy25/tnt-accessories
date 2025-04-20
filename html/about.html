@@ -258,6 +258,7 @@
         .button-apply{
             position: absolute;
             right: 50px;
+            top : 40px;
         }
         .apply-button {
             background-color: white;
@@ -383,8 +384,8 @@
         #search {
             color: white;
             position: absolute;
-            top: -3px;
-            right: 30px;
+            top: -5px;
+            right: -20px;
             font-size: 20px;
         }
     </style>
@@ -500,7 +501,7 @@
                                     <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
                                 </div>
                                 <div class="button-apply">
-                                    <button class="apply-button w-100">Áp dụng</button>
+                                    <button class="apply-button">Áp dụng</button>
                                 </div>
                             </div>
                             <div class="summary">
@@ -513,7 +514,7 @@
                                     <div class="total-price">29.298.000 VND</div>
                                 </div>
                             </div>
-                            <button class="checkout-button" ><a href="./thanhtoan.html">ĐẶT HÀNG</a></button>
+                            <button class="checkout-button" ><a href="../thanhtoan.html">ĐẶT HÀNG</a></button>
                         </div>
                       </div>
                     </div>
@@ -634,30 +635,47 @@
     </div>
 
     <script>
-        document.addEventListener("click", function (e) {
-    const modal = document.getElementById("cartModal");
-    const cartIcon = document.getElementById("cart");
-    const modalDialog = modal.querySelector(".modal-dialog");
+        const cartbtn = document.querySelector('#bucket');
+     // Hiện giỏ hàng
+    if(cartbtn){
+        cartbtn.addEventListener("click", function() {
+            const cartContainer = document.querySelector('.cart-container');
+            if(closeOut){
+                closeOut.style.display = "none";
+            }
+        })
+    }
+    document.addEventListener("click", function (e) {
+        const modal = document.getElementById("cartModal");
+        const cartIcon = document.getElementById("cart");
+        const modalDialog = modal.querySelector(".modal-dialog");
 
-    const clickedOutsideModal = !modalDialog.contains(e.target);
-    const clickedIcon = cartIcon.contains(e.target);
+        const clickedOutsideModal = !modalDialog.contains(e.target);
+        const clickedIcon = cartIcon.contains(e.target);
 
-    const isModalVisible = modal.classList.contains("show");
+        const isModalVisible = modal.classList.contains("show");
 
-    if (isModalVisible && clickedOutsideModal && !clickedIcon) {
-        const bsModal = bootstrap.Modal.getInstance(modal);
-        if (bsModal) {
-            bsModal.hide();
+        if (isModalVisible && clickedOutsideModal && !clickedIcon) {
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            if (bsModal) {
+                bsModal.hide();
+            }
         }
+    });
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeWindow() {
+        window.close();
+    }
+    document.querySelector('.btn-close').addEventListener('click', function() {
+    const modal = document.getElementById('cartModal');
+    const bsModal = bootstrap.Modal.getInstance(modal);
+    if (bsModal) {
+        bsModal.hide();
     }
 });
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
-    }
-
-    function closeWindow() {
-    window.close();
-}
     </script>
 </body>
 </html>
