@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const phoneInput = document.getElementById('phone');
     const passwordInput = document.getElementById('password');
     const togglePassword = document.getElementById('togglePassword');
-    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
     
 
     const phoneError = document.getElementById('phoneError');
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ---------------Điều kiện đăng nhập------------
     const patterns = {
         phone: /^0\d{9}$/,
-        password: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/,
+        password: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/
     };
 
     function showError(input, errorElement, message) {
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // -----------Kiểm tra số điện thoại-----------
     function validatePhone() {
         const value = phoneInput.value.trim();
-        
+        console.log(value);
         if (value === '') {
             showError(phoneInput, phoneError, 'Số điện thoại không được để trống');
             return false;

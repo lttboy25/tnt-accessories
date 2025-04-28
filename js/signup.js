@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all form elements
+    //Lấy các giá trị nhập vào
     const form = document.getElementById('registrationForm');
     const phoneInput = document.getElementById('phone');
     const passwordInput = document.getElementById('password');
@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const maleRadio = document.getElementById('male');
     const femaleRadio = document.getElementById('female');
     
-    // Get toggle password elements
-    const togglePassword = document.getElementById('togglePassword');
+    // 2 nút hiện mật khẩu
+    const togglePassword = document.getElementById('hien-thi-mat-khau');
     const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
     
-    // Get error message elements
+    // Các lỗi
     const phoneError = document.getElementById('phoneError');
     const passwordError = document.getElementById('passwordError');
     const confirmPasswordError = document.getElementById('confirmPasswordError');
@@ -25,16 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const genderError = document.getElementById('genderError');
     const termsError = document.getElementById('termsError');
     
-    // Validation patterns
+    // biểu thức chính
     const patterns = {
         phone: /^0\d{9}$/,
         password: /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/,
         name: /^[A-Za-zÀ-ỹ\s]+$/,
         email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-        dob: /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/
+        dob: /^(0?[1-9]|[12][0-9]|3[01])[- /.](0?[1-9]|1[0-2])[- /.]((19|20)?\d{2})$/
     };
     
-    // Helper functions for showing/hiding error messages with animation
     function showError(input, errorElement, message) {
         input.classList.add('input-error');
         input.classList.remove('input-success');
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         input.classList.remove('input-error');
     }
     
-    // Toggle password visibility
+    // Nút hiện mật khẩu
     togglePassword.addEventListener('click', function() {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
@@ -67,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle('bi-eye-slash');
     });
     
-    // Format date input
+    //format lại ngày tháng năm sinh
     dobInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
+        let value = e.target.value.replace(/\D/g, ''); //xóa tất cả kí tự khoong phải số
         if (value.length > 0) {
             if (value.length <= 2) {
                 value = value;
-            } else if (value.length <= 4) {
+            } else if (value.length <= 4) { //nếu nhập 3-4 số tự động chèn / vào
                 value = value.slice(0, 2) + '/' + value.slice(2);
             } else {
                 value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4, 8);
@@ -81,40 +80,84 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.value = value;
         }
     });
-    
-    // Real-time validation functions
-    function validatePhone() {
-        const value = phoneInput.value.trim();
-        
+    // -----------Kiểm tra số ngày tháng năm sinh-----------
+    function validateDOB() {
+        const value = dobInput.value.trim();
         if (value === '') {
-            showError(phoneInput, phoneError, 'Số điện thoại không được để trống');
+            showError(dobInput, dobError, 'Ngày sinh không được để trống');
             return false;
-        } else if (!patterns.phone.test(value)) {
-            showError(phoneInput, phoneError, 'Số điện thoại phải bắt đầu bằng số 0 và có 10 chữ số');
+        } 
+        else if (!patterns.dob.test(value)) {
+            showError(dobInput, dobError, 'Ngày sinh phải có định dạng DD/MM/YY');
             return false;
-        } else {
-            hideError(phoneInput, phoneError);
-            showSuccess(phoneInput);
+        }
+         else {
+            const parts = value.split('/');
+            const month = parseInt(parts[1], 10);
+            const day = parseInt(parts[0], 10);
+            const year = parseInt(parts[2], 10);
+            const date = new Date(year, month - 1, day);
+            if (
+                date.getFullYear() !== year || 
+                date.getMonth() !== month - 1 || 
+                date.getDate() !== day
+            ) {
+                showError(dobInput, dobError, 'Ngày tháng năm không hợp lệ');
+                return false;
+            }
+            
+            hideError(dobInput, dobError);
+            showSuccess(dobInput);
             return true;
         }
     }
     
+    // -----------Kiểm tra số điện thoại-----------
+function validatePhone() {
+    const value = phoneInput.value.trim();
+    
+    // Hiển thị thông báo lỗi và thêm viền đỏ nếu số điện thoại không hợp lệ
+    if (value === '') {
+        document.getElementById("hien-loi-dien-thoai").innerHTML = "Số điện thoại không được để trống";
+        phoneInput.classList.add('input-error');  // Thêm viền đỏ
+        return false;
+    } else if (!patterns.phone.test(value)) {
+        document.getElementById("hien-loi-dien-thoai").innerHTML = "Số điện thoại phải bắt đầu bằng số 0 và có 10 chữ số";
+        phoneInput.classList.add('input-error');  // Thêm viền đỏ
+        return false;
+    } else {
+        // Xóa viền đỏ và thông báo lỗi nếu số điện thoại hợp lệ
+        hideError(phoneInput, phoneError);
+        showSuccess(phoneInput);
+        document.getElementById("hien-loi-dien-thoai").innerHTML = "";
+        phoneInput.classList.remove('input-error');  // Xóa viền đỏ
+        return true;
+    }
+}
+    
+    // -----------Kiểm tra mật khẩu-----------
     function validatePassword() {
-        const value = passwordInput.value.trim();
-        
+        const value = passwordInput.value.trim();        
+        // Hiển thị thông báo lỗi và thêm viền đỏ nếu mật khẩu không hợp lệ
         if (value === '') {
-            showError(passwordInput, passwordError, 'Mật khẩu không được để trống');
+            document.getElementById("hien-loi").innerHTML = "Mật khẩu không được để trống";
+            passwordInput.classList.add('input-error');  // Thêm viền đỏ
             return false;
         } else if (!patterns.password.test(value)) {
-            showError(passwordInput, passwordError, 'Mật khẩu phải từ 8-16 ký tự, bao gồm chữ hoa, số, và ký tự đặc biệt');
+            document.getElementById("hien-loi").innerHTML = "Mật khẩu phải từ 8-16 ký tự, bao gồm chữ hoa, số và ký tự đặc biệt";
+            passwordInput.classList.add('input-error');  // Thêm viền đỏ
             return false;
         } else {
+            // Xóa viền đỏ và thông báo lỗi nếu mật khẩu hợp lệ
             hideError(passwordInput, passwordError);
             showSuccess(passwordInput);
+            document.getElementById("hien-loi").innerHTML = "";
+            passwordInput.classList.remove('input-error');  // Xóa viền đỏ
             return true;
         }
     }
     
+        // -----------Kiểm tra xác nhận lại mật khẩu----------
     function validateConfirmPassword() {
         const value = confirmPasswordInput.value.trim();
         const passwordValue = passwordInput.value.trim();
@@ -122,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (value === '') {
             showError(confirmPasswordInput, confirmPasswordError, 'Vui lòng nhập lại mật khẩu');
             return false;
-        } else if (value !== passwordValue) {
+        } else if (passwordValue !== '' && value !== passwordValue) {
             showError(confirmPasswordInput, confirmPasswordError, 'Mật khẩu nhập lại không khớp');
             return false;
         } else {
@@ -132,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+        // -----------Kiểm tra tên----------
     function validateName() {
         const value = nameInput.value.trim();
         
@@ -148,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+        // -----------Kiểm tra email-----------
     function validateEmail() {
         const value = emailInput.value.trim();
         
@@ -164,22 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    function validateDOB() {
-        const value = dobInput.value.trim();
-        
-        if (value === '') {
-            showError(dobInput, dobError, 'Ngày sinh không được để trống');
-            return false;
-        } else if (!patterns.dob.test(value)) {
-            showError(dobInput, dobError, 'Ngày sinh phải có định dạng mm/dd/yyyy');
-            return false;
-        } else {
-            hideError(dobInput, dobError);
-            showSuccess(dobInput);
-            return true;
-        }
-    }
-    
+    // Phải chọn giới tính
     function validateGender() {
         if (!maleRadio.checked && !femaleRadio.checked) {
             genderError.textContent = 'Vui lòng chọn giới tính';
@@ -190,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         }
     }
-    
+    // Phải tích vào ô xác nhận điều khoản
     function validateTerms() {
         if (!termsCheckbox.checked) {
             termsError.textContent = 'Vui lòng chấp nhận điều khoản sử dụng';
@@ -242,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     dobInput.addEventListener('blur', validateDOB);
-    dobInput.addEventListener('change', function() {
+    dobInput.addEventListener('input', function() {
         if (dobInput.classList.contains('input-error')) {
             validateDOB();
         }
@@ -253,30 +283,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     termsCheckbox.addEventListener('change', validateTerms);
     
-    // Form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Validate all fields
-        const isPhoneValid = validatePhone();
-        const isPasswordValid = validatePassword();
-        const isConfirmPasswordValid = validateConfirmPassword();
-        const isNameValid = validateName();
-        const isEmailValid = validateEmail();
-        const isDOBValid = validateDOB();
-        const isGenderValid = validateGender();
-        const areTermsAccepted = validateTerms();
-        
-        // Submit form if all validations pass
-        if (isPhoneValid && isPasswordValid && isConfirmPasswordValid && 
-            isNameValid && isEmailValid && isDOBValid && 
-            isGenderValid && areTermsAccepted) {
+        // Nếu thỏa mãn hết điều kiện
+        if (validatePhone() && validatePassword() && validateConfirmPassword() && 
+        validateName() && validateEmail() && validateDOB() && 
+        validateGender() && validateTerms()) {
             
-            // Show success message
+            // Đăng ký thành công
             alert('Đăng ký thành công!');
-            
-            // You can submit the form here if needed
-            // form.submit();
+            window.location.href = '../index.html';
         }
     });
 });

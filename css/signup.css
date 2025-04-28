@@ -352,6 +352,7 @@ header ul li a:hover {
 
 .error-message.show {
     opacity: 1;
+    display: block;
     height: auto;
     margin-top: 8px;
 }
@@ -823,6 +824,24 @@ hr {
     margin-top: 8px;
 }
 
+#hien-loi {
+    color: #e60000;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 45px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#hien-loi-dien-thoai{
+    color: #e60000;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 45px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
 .input-success {
     border-color: #28a745 !important;
 }
@@ -861,7 +880,7 @@ hr {
     text-decoration: underline;
 }
 
-/* Footer styles */
+/* Footer */
 .logofooter{
     font-family: 'Arareelike';
     font-size: 30px;
